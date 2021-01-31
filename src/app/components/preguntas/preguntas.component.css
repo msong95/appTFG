@@ -1,0 +1,49 @@
+h1 {
+    font-family: 'Arial';
+    font-size: 5em;
+    white-space:normal;
+    word-break: break-all;
+    color: grey;
+    text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px 
+    rgba(0, 0, 0, 0.8);
+    text-align:center;
+    width:100%;
+    display: inline-block;
+  }
+  img{
+    width: 30%;
+     height: 30%;
+}
+.container {
+    max-width: 50%;
+    background-color: #fafafa60;
+    border-radius: 20px;
+}
+ form{
+     padding: 30px;
+ }
+
+ .container h1{
+     text-align: center;
+ } 
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: orange;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+}
+header{
+    width:100%; /* Establecemos que el header abarque el 100% del documento */
+	overflow:hidden; /* Eliminamos errores de float */
+	margin-bottom:20px;
+}
+
+@media (min-width: 480px) {
+    #titulo {
+        font-size: 40px;
+    }
+  }
