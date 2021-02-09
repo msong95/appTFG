@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   async login(){
     const response = await this.auth.login(this.loginForm.value);
     console.log(response)
-    this.router.navigate(['/preguntas'])
+    this.router.navigate(['/preguntasHome'])
   }
 
 }

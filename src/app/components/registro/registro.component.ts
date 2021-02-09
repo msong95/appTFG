@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-registro',
@@ -13,7 +13,7 @@ export class RegistroComponent implements OnInit {
 
   registroForm: FormGroup;
 
-  constructor(private auth: AuthService) { }
+  constructor(private router: Router,private auth: AuthService) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -32,5 +32,6 @@ export class RegistroComponent implements OnInit {
     async registro(){
       const response = await this.auth.registro(this.registroForm.value);
       console.log(response)
+      this.router.navigate(['/preguntasHome'])
     }
 }

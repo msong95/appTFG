@@ -7,10 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
-import { PreguntasComponent } from './components/preguntas/preguntas.component';
+import { PreguntasComponent } from './components/preguntas1/preguntas.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
+import { HomePreguntasComponent } from './components/home-preguntas/home-preguntas.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './components/home/home.component';
     PreguntasComponent,
     HeaderComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    HomePreguntasComponent
   ],
   imports: [
     BrowserModule,
