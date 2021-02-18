@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PREGUNTAS_PAG_1 } from '../../mocks/preguntas.mock';
+import { Preguntas } from 'src/app/models/preguntas.model';
 
 @Component({
   selector: 'app-home-preguntas',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-preguntas.component.css']
 })
 export class HomePreguntasComponent implements OnInit {
+
+  preguntasPadre: Preguntas[] = PREGUNTAS_PAG_1;
 
   constructor() { }
 
