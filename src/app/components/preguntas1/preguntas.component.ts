@@ -10,7 +10,9 @@ export class PreguntasComponent implements OnInit {
 
   @Input() preguntas: Preguntas[];
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
     console.log(this.preguntas)

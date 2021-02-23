@@ -7,5 +7,6 @@ export interface Preguntas {
   export interface Respuestas {
     respuesta: string;
     puntuacion: number | string;
+    id?: string;
   }
   

@@ -2,35 +2,23 @@
 <div class="wrapper">
  
     <div class="container">
-      <form>
+      <form novalidate [formGroup]="preguntas2Form" (ngSubmit)="onSubmit()">
         <h3>Consecuencias</h3>
 
-        <fieldset class="row mb-3">
-          <p><strong>4.Como consecuencia del incidente:</strong></p>
-          <div class="col-sm-10">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" name="respuestaA"  >
-            <label class="form-check-label" for="flexCheckDefault">
-            	Personas u organizaciones que no están autorizadas, o no tienen un propósito legítimo para acceder a los datos, han podido acceder y/o extraerlos.
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" name="respuestaB" >
-            <label class="form-check-label" for="flexCheckChecked">
-              Se han destruido, perdido o cifrado datos personales, de forma que no pueden ser tratados.
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" name="respuestaC" >
-            <label class="form-check-label" for="flexCheckChecked"> 
-	        Se han alterado los datos personales y el tratamiento con datos alterados/inexactos puede suponer un daño para los afectados.
-            </label>
-          </div>
-
-        </div>
-        </fieldset> 
-
-          <div class="pregunta4" style="display: none">
+        <fieldset class="row mb-3" *ngFor="let pregunta of preguntasPadre2">
+          <p><strong>{{pregunta.titulo}}</strong></p>
+            <div class="col-sm-10">
+              <div class="form-check" *ngFor="let respuesta of pregunta.respuestas">
+                <input class="form-check-input" type={{pregunta.tipo}} formControlName="{{respuesta.id}}" name="{{respuesta.id}}" (change)="onChange(respuesta.id)" >              
+                <label class="form-check-label" for="gridRadios10">
+                  {{respuesta.respuesta}}
+                </label>
+              </div>
+         </div>
+  
+        </fieldset>
+     
+          <div class="pregunta4" *ngIf="extension">
           <p><strong>4A. Referido específicamente a los datos afectados. ¿Están los datos cifrados de forma segura, anonimizados o protegidos de forma que son ininteligibles para quien haya podido tener acceso o no se puede identificar a las personas? *</strong></p>
           <div class="col-sm-10">
             <div class="form-check">
@@ -54,7 +42,55 @@
             </div>
         </div>
       </div>
+      <div class="pregunta4" *ngIf="extension1">
+        <p><strong>4B. Referido específicamente a los datos afectados. ¿Están los datos cifrados de forma segura, anonimizados o protegidos de forma que son ininteligibles para quien haya podido tener acceso o no se puede identificar a las personas? *</strong></p>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
+            <label class="form-check-label" for="gridRadios1">
+              Si
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+            <label class="form-check-label" for="gridRadios2">
+              No
+            </label>
+          </div>
 
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+            <label class="form-check-label" for="gridRadios2">
+             Desconocido
+            </label>
+          </div>
+      </div>
+    </div>
+
+    <div class="pregunta4" *ngIf="extension2">
+      <p><strong>4C. Referido específicamente a los datos afectados. ¿Están los datos cifrados de forma segura, anonimizados o protegidos de forma que son ininteligibles para quien haya podido tener acceso o no se puede identificar a las personas? *</strong></p>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
+          <label class="form-check-label" for="gridRadios1">
+            Si
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">
+            No
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">
+           Desconocido
+          </label>
+        </div>
+    </div>
+  </div>
         <button type="submit" class="btn btn-primary">Siguiente</button>
         <p>Página 2/5</p>
   
