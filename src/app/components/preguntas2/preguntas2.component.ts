@@ -40,6 +40,7 @@ export class Preguntas2Component implements OnInit {
   onSubmit(){
       
   }
+  
   onChange(id){
     if (id=="respuesta_1")  {
         this.extension=!this.extension

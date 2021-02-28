@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Preguntas } from 'src/app/models/preguntas.model';
-
+import { PREGUNTAS_PAG_1, PREGUNTAS_PAG_2 } from '../../mocks/preguntas.mock';
 @Component({
   selector: 'app-preguntas',
   templateUrl: './preguntas.component.html',
@@ -9,6 +9,7 @@ import { Preguntas } from 'src/app/models/preguntas.model';
 export class PreguntasComponent implements OnInit {
 
   @Input() preguntas: Preguntas[];
+  preguntasPadre: Preguntas[] = PREGUNTAS_PAG_1;
 
   constructor() { 
     

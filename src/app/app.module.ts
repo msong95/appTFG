@@ -13,6 +13,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { HomePreguntasComponent } from './components/home-preguntas/home-preguntas.component';
 import { Preguntas2Component } from './components/preguntas2/preguntas2.component';
+import { Preguntas3Component } from './components/preguntas3/preguntas3.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { Preguntas2Component } from './components/preguntas2/preguntas2.componen
     MenuComponent,
     HomeComponent,
     HomePreguntasComponent,
-    Preguntas2Component
+    Preguntas2Component,
+    Preguntas3Component
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PreguntasComponent } from './components/preguntas1/preguntas.component';
 import { Preguntas2Component } from './components/preguntas2/preguntas2.component';
+import { Preguntas3Component } from './components/preguntas3/preguntas3.component';
 import { RegistroComponent } from './components/registro/registro.component';
 
 const routes: Routes = [
@@ -28,6 +29,9 @@ const routes: Routes = [
   },
   {
     path: 'preguntas2', component: Preguntas2Component
+  },
+  {
+    path: 'preguntas3', component: Preguntas3Component
   },
   {
     path: '**', redirectTo: '/home'
