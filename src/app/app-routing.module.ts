@@ -6,6 +6,8 @@ import { LoginComponent } from './components/login/login.component';
 import { PreguntasComponent } from './components/preguntas1/preguntas.component';
 import { Preguntas2Component } from './components/preguntas2/preguntas2.component';
 import { Preguntas3Component } from './components/preguntas3/preguntas3.component';
+import { Preguntas4Component } from './components/preguntas4/preguntas4.component';
+import { Preguntas5Component } from './components/preguntas5/preguntas5.component';
 import { RegistroComponent } from './components/registro/registro.component';
 
 const routes: Routes = [
@@ -32,6 +34,12 @@ const routes: Routes = [
   },
   {
     path: 'preguntas3', component: Preguntas3Component
+  },
+  {
+    path: 'preguntas4', component: Preguntas4Component
+  },
+  {
+    path: 'preguntas5', component: Preguntas5Component
   },
   {
     path: '**', redirectTo: '/home'

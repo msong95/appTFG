@@ -14,6 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HomePreguntasComponent } from './components/home-preguntas/home-preguntas.component';
 import { Preguntas2Component } from './components/preguntas2/preguntas2.component';
 import { Preguntas3Component } from './components/preguntas3/preguntas3.component';
+import { Preguntas4Component } from './components/preguntas4/preguntas4.component';
+import { Preguntas5Component } from './components/preguntas5/preguntas5.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { Preguntas3Component } from './components/preguntas3/preguntas3.componen
     HomeComponent,
     HomePreguntasComponent,
     Preguntas2Component,
-    Preguntas3Component
+    Preguntas3Component,
+    Preguntas4Component,
+    Preguntas5Component
   ],
   imports: [
     BrowserModule,
