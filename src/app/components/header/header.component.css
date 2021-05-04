@@ -12,6 +12,10 @@ header {
     align-items: center;
     height: 120px;
 }
+i { 
+    color:orange; 
+    font-size: 50px;
+  }
 
 @media (max-width: 767px){
 

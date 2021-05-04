@@ -16,6 +16,8 @@ import { Preguntas2Component } from './components/preguntas2/preguntas2.componen
 import { Preguntas3Component } from './components/preguntas3/preguntas3.component';
 import { Preguntas4Component } from './components/preguntas4/preguntas4.component';
 import { Preguntas5Component } from './components/preguntas5/preguntas5.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RedesSocialesComponent } from './components/redes-sociales/redes-sociales.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { Preguntas5Component } from './components/preguntas5/preguntas5.componen
     Preguntas2Component,
     Preguntas3Component,
     Preguntas4Component,
-    Preguntas5Component
+    Preguntas5Component,
+    FooterComponent,
+    RedesSocialesComponent
   ],
   imports: [
     BrowserModule,
