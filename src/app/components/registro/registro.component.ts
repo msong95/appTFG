@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormContent } from 'src/app/interfaces/formContent.interface';
 import { AuthService } from 'src/app/services/auth.service';
-
 
 @Component({
   selector: 'app-registro',
@@ -10,28 +10,60 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
+  public formData: FormContent = {
+    formTitle: 'Formulario de registro',
+    buttonText: 'Enviar',
+    btnBlock: true,
+    buttonClass: 'btn btn-secondary p-2',
+    inputs: [
+      {
+        title: 'Username',
+        tooltip: 'Enter your username',
+        data: {
+          type: 'text',
+          id: 'username'
+        }
+      },
+      {
+        title: 'Email',
+        tooltip: 'Invalid Email',
+        data: {
+          validators: [
+            Validators.required,
+            Validators.pattern(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)
+          ],
+          type: 'email',
+          id: 'email'
+        }
+      },
+      {
+        title: 'Password',
+        tooltip: 'Enter your password',
+        data: {
+          type: 'password',
+          id: 'password'
+        }
+      },
+      {
+        title: 'Repite Password',
+        tooltip: 'Enter your password',
+        data: {
+          type: 'password',
+          id: 'repite_password'
+        }
+      }
+    ]
+  };
 
-  registroForm: FormGroup;
-
-  constructor(private router: Router,private auth: AuthService) { }
+  constructor(private router: Router, private auth: AuthService) {}
 
   ngOnInit(): void {
-    this.initializeForm();
   }
 
-    initializeForm(){
-      this.registroForm= new FormGroup(
-        {
-        email: new FormControl(),
-        password: new FormControl(),
-        }
-
-      )
-    }
-
-    async registro(){
-      const response = await this.auth.registro(this.registroForm.value);
-      console.log(response)
-      this.router.navigate(['/preguntasHome'])
-    }
+  async registro(event) {
+    console.log(event)
+/*     const response = await this.auth.registro(this.registroForm.value);
+    console.log(response);
+    this.router.navigate(['/preguntasHome']); */
+  }
 }

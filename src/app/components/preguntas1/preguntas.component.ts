@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Preguntas } from 'src/app/models/preguntas.model';
 import { PREGUNTAS_PAG_1, PREGUNTAS_PAG_2 } from '../../mocks/preguntas.mock';
 @Component({
@@ -11,8 +12,8 @@ export class PreguntasComponent implements OnInit {
   @Input() preguntas: Preguntas[];
   preguntasPadre: Preguntas[] = PREGUNTAS_PAG_1;
 
-  constructor() { 
-    
+  constructor(private router: Router) {
+
   }
 
   ngOnInit(): void {

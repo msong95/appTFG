@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms'
 
+
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { Preguntas4Component } from './components/preguntas4/preguntas4.componen
 import { Preguntas5Component } from './components/preguntas5/preguntas5.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RedesSocialesComponent } from './components/redes-sociales/redes-sociales.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { RedesSocialesComponent } from './components/redes-sociales/redes-social
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
