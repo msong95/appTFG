@@ -18,7 +18,6 @@ import { Preguntas3Component } from './components/preguntas3/preguntas3.componen
 import { Preguntas4Component } from './components/preguntas4/preguntas4.component';
 import { Preguntas5Component } from './components/preguntas5/preguntas5.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { RedesSocialesComponent } from './components/redes-sociales/redes-sociales.component';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -36,7 +35,7 @@ import { SharedModule } from './shared/shared.module';
     Preguntas4Component,
     Preguntas5Component,
     FooterComponent,
-    RedesSocialesComponent
+
   ],
   imports: [
     BrowserModule,
