@@ -20,16 +20,17 @@ export class FormularioComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.initializeForm()
+  }
+
+  initializeForm(){
     const inputs = this.formContent.inputs;
     console.log(inputs)
     inputs.forEach((input: Inputs) => {
       this.inputForms[input.data.id] = new FormControl('',input.data.validators)
     });
-    this.initializeForm()
-  }
-
-  initializeForm(){
     this.formulario = new FormGroup(this.inputForms)
+
   }
 
   onSubmit(){

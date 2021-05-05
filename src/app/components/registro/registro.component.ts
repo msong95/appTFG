@@ -28,10 +28,6 @@ export class RegistroComponent implements OnInit {
         title: 'Email',
         tooltip: 'Invalid Email',
         data: {
-          validators: [
-            Validators.required,
-            Validators.pattern(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)
-          ],
           type: 'email',
           id: 'email'
         }
@@ -60,7 +56,7 @@ export class RegistroComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async registro(event) {
+  registro(event) {
     console.log(event)
 /*     const response = await this.auth.registro(this.registroForm.value);
     console.log(response);

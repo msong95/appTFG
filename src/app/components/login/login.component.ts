@@ -38,29 +38,29 @@ export class LoginComponent implements OnInit {
   ]
 }
 
-  loginForm: FormGroup;
+  // loginForm: FormGroup;
 
-  preguntasForm: FormGroup;
+  // preguntasForm: FormGroup;
 
   constructor(private router: Router, private auth:AuthService) { }
 
   ngOnInit(): void {
-    this.initializeForm()
+    // this.initializeForm()
 
   }
 
-  initializeForm(){
-    this.loginForm = new FormGroup(
-      {
-        email: new FormControl(),
-        password: new FormControl()
-      }
-    )
-  }
+  // initializeForm(){
+  //   this.loginForm = new FormGroup(
+  //     {
+  //       email: new FormControl(),
+  //       password: new FormControl()
+  //     }
+  //   )
+  // }
 
   async login(){
-    const response = await this.auth.login(this.loginForm.value);
-    console.log(response)
+    //const response = await this.auth.login(this.loginForm.value);
+    //console.log(response)
     this.router.navigate(['/preguntasHome'])
   }
 
