@@ -12,23 +12,23 @@ export class AuthService {
   login(values: Usuario): Promise<any>{
     try {
       return new Promise((resolve,reject) => {
-      resolve({message: 'Login correcto'})
+      resolve({message: 'Login correcto', access: true})
     })
     } catch (error) {
       return error
     }
-    
+
   }
 
   registro(values: Usuario): Promise <any>{
     try {
        return new Promise ((resolve,reject)=>{
-        resolve({message:'Registro correcto'})
+        resolve({message:'Registro correcto' , access: true})
     })
     } catch (error) {
       return error
     }
-   
+
 
   }
 }

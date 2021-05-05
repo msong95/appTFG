@@ -1,7 +1,7 @@
 
 <div class="wrapper">
     <div class="container">
-      <app-formulario [formContent]="formData"></app-formulario>
+      <app-formulario [formContent]="formData" (sendForm)="sendForm($event)"></app-formulario>
     </div>
 </div>
 

@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FormContent, Inputs } from 'src/app/interfaces/formContent.interface';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-formulario',
@@ -15,7 +17,10 @@ export class FormularioComponent implements OnInit {
   inputForms: any = {};
   formulario: FormGroup;
 
-  constructor() {
+  constructor(
+    private auth: AuthService,
+    private router: Router
+    ) {
     this.sendForm = new EventEmitter()
    }
 
@@ -33,8 +38,9 @@ export class FormularioComponent implements OnInit {
 
   }
 
-  onSubmit(){
-    this.sendForm.emit(this.formulario.value)
+  async onSubmit(){
+    const response = await this.auth.login(this.formulario.value)
+    this.sendForm.emit(response);
   }
 
 }

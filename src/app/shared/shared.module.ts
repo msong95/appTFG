@@ -4,6 +4,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @NgModule({
   declarations: [FormularioComponent, PreguntasComponent, DashboardComponent],
@@ -12,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [FormularioComponent, PreguntasComponent, DashboardComponent]
+  exports: [FormularioComponent, PreguntasComponent, DashboardComponent],
+  providers: [AuthService]
 })
 export class SharedModule { }
