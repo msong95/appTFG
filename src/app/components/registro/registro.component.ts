@@ -13,6 +13,7 @@ export class RegistroComponent implements OnInit {
   public formData: FormContent = {
     formTitle: 'Formulario de registro',
     buttonText: 'Enviar',
+    classTitle: 'text-center',
     btnBlock: true,
     buttonClass: 'btn btn-secondary p-2',
     inputs: [
@@ -48,18 +49,17 @@ export class RegistroComponent implements OnInit {
           id: 'repite_password'
         }
       }
+
     ]
   };
 
   constructor(private router: Router, private auth: AuthService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  registro(event) {
-    console.log(event)
-/*     const response = await this.auth.registro(this.registroForm.value);
+  async registro(event) {
+    const response = await this.auth.registro(event);
     console.log(response);
-    this.router.navigate(['/preguntasHome']); */
+    this.router.navigate(['/preguntasHome']);
   }
 }

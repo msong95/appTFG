@@ -18,8 +18,7 @@ export class FormularioComponent implements OnInit {
   formulario: FormGroup;
 
   constructor(
-    private auth: AuthService,
-    private router: Router
+    private auth: AuthService
     ) {
     this.sendForm = new EventEmitter()
    }
@@ -30,7 +29,6 @@ export class FormularioComponent implements OnInit {
 
   initializeForm(){
     const inputs = this.formContent.inputs;
-    console.log(inputs)
     inputs.forEach((input: Inputs) => {
       this.inputForms[input.data.id] = new FormControl('',input.data.validators)
     });
@@ -39,6 +37,7 @@ export class FormularioComponent implements OnInit {
   }
 
   async onSubmit(){
+    console.log(this.formulario.value)
     const response = await this.auth.login(this.formulario.value)
     this.sendForm.emit(response);
   }

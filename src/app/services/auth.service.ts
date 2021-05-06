@@ -21,9 +21,10 @@ export class AuthService {
   }
 
   registro(values: Usuario): Promise <any>{
+    console.log(values)
     try {
        return new Promise ((resolve,reject)=>{
-        resolve({message:'Registro correcto' , access: true})
+        resolve({message:'Registro correcto'})
     })
     } catch (error) {
       return error

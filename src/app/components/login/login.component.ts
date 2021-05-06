@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   public formData: FormContent = {
     formTitle: 'Formulario de login',
-    classTitle:'text-center',
+    classTitle: 'text-center',
     buttonText: 'Enviar',
     buttonClass: 'btn-secondary btn p-2',
     btnBlock: false,
@@ -32,31 +32,18 @@ export class LoginComponent implements OnInit {
       tooltip: 'Enter your password',
       data: {
         type: 'password',
-        id: 'password'
+        id: 'password1'
       }
     }
   ]
 }
 
-  // loginForm: FormGroup;
-
-  // preguntasForm: FormGroup;
-
   constructor(private router: Router, private auth:AuthService) { }
 
   ngOnInit(): void {
-    // this.initializeForm()
 
   }
 
-  // initializeForm(){
-  //   this.loginForm = new FormGroup(
-  //     {
-  //       email: new FormControl(),
-  //       password: new FormControl()
-  //     }
-  //   )
-  // }
 
   async login(){
     //const response = await this.auth.login(this.loginForm.value);
