@@ -1,5 +1,6 @@
 export const PREGUNTAS = {
   pagina_1: [
+    
     {
       id: 1,
       titulo: 'Pregunta 1',

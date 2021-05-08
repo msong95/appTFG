@@ -23,7 +23,7 @@
         type="submit"
         class="btn btn-secondary"
         *ngIf="paginaActual > 1"
-      >
+       >
         Anterior
       </button>
       <button
@@ -31,10 +31,22 @@
         type="submit"
         class="btn btn-secondary"
         *ngIf="paginaActual < paginador"
-      >
+       >
         Siguiente
       </button>
+
+
+      <button
+      (click)="caculateLevel()"
+      type="submit"
+      class="btn btn-success"
+      *ngIf="paginaActual==paginador"
+   >
+     Finalizar
+    </button>
+
       <p>Página {{ paginaActual }}/{{ paginador }}</p>
+
     </form>
   </div>
 </div>
