@@ -26,4 +26,7 @@
     width:100%;
     display: inline-block;
   }
+  button {
+    margin: 10px;
+  }
   
