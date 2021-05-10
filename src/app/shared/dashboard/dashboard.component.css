@@ -1,0 +1,29 @@
+
+  .container {
+    max-width: 50%;
+    background-color: #fafafa60;
+    border-radius: 20px;
+  }
+
+  .wrapper{
+    width: 100%;
+    height: 100vh;
+    background-image: url('http://www.solprof.com/sites/default/files/fondo-01.jpg');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: relative;
+  }
+  h1 {
+    font-family: 'Arial';
+    font-size: 3em;
+    white-space:normal;
+    word-break: break-all;
+    color: grey;
+    text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px 
+    rgba(0, 0, 0, 0.8);
+    text-align:center;
+    width:100%;
+    display: inline-block;
+  }
+  

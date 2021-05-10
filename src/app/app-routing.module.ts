@@ -4,6 +4,7 @@ import { HomePreguntasComponent } from './components/home-preguntas/home-pregunt
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { DashboardComponent } from './shared/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -22,8 +23,12 @@ const routes: Routes = [
     path: 'home', component: HomeComponent
   },
   {
+    path: 'dashboard', component: DashboardComponent
+  },
+  {
     path: '**', redirectTo: '/home'
   },
+
 
 ];
 
