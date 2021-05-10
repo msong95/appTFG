@@ -1,9 +1,9 @@
 <div class="wrapper">
   <div class="container">
     <form>
-      <h3>Sobre la brecha</h3>
+      <h3>Detalles sobre la brecha de segurdad:</h3>
       <fieldset class="row mb-3" *ngFor="let pregunta of preguntasActuales">
-        <h3>{{ pregunta.titulo }}</h3>
+        <h5>{{ pregunta.titulo }}</h5>
         <div class="col-sm-10">
           <div class="form-check" *ngFor="let respuesta of pregunta.respuestas">
             <input

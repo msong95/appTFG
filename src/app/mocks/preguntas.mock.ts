@@ -1,21 +1,22 @@
 export const PREGUNTAS = {
   pagina_1: [
-    
     {
       id: 1,
-      titulo: 'Pregunta 1',
+      titulo: '¿De qué manera se ha provocado la brecha?',
       respuestas: [
         {
-          id: 'respuesta_1',
-          respuesta: 'Respuesta 1',
+          id: 'respuesta_1_1',
+          respuesta: 'Accidental',
           puntuacion: 2
         },
         {
-          respuesta: 'Respuesta 2',
+          id: 'respuesta_1_2',
+          respuesta: 'Intencionado',
           puntuacion: 5
         },
         {
-          respuesta: 'Respuesta 3',
+          id: 'respuesta_1_3',
+          respuesta: 'Desconocido',
           puntuacion: 1
         }
       ],
@@ -23,18 +24,21 @@ export const PREGUNTAS = {
     },
     {
       id: 2,
-      titulo: 'Pregunta 2',
+      titulo: '¿Quien lo ha originado?',
       respuestas: [
         {
-          respuesta: 'Respuesta 1',
+          id: 'respuesta_2_1',
+          respuesta: 'Interno: Ha sido provocado por gente responsable del tratamiento',
           puntuacion: 2
         },
         {
-          respuesta: 'Respuesta 2',
+          id: 'respuesta_2_2',
+          respuesta: 'Interno: Ha sido provocado por el encargado del tratamiento',
           puntuacion: 5
         },
         {
-          respuesta: 'Respuesta 3',
+          id: 'respuesta_2_3',
+          respuesta: 'Externo: Ha sido provocado por gente externa que no tiene nada que con el tratamiento interna de la empresa. ',
           puntuacion: 1
         }
       ],
@@ -42,19 +46,17 @@ export const PREGUNTAS = {
     },
     {
       id: 3,
-      titulo: 'Pregunta 3',
+      titulo: '¿Ha sido provocado por un ciberincidente?',
       respuestas: [
         {
-          respuesta: 'Respuesta 1',
+          id: 'respuesta_3_1',
+          respuesta: 'Si',
           puntuacion: 2
         },
         {
-          respuesta: 'Respuesta 2',
+          id: 'respuesta_3_2',
+          respuesta: 'No',
           puntuacion: 5
-        },
-        {
-          respuesta: 'Respuesta 3',
-          puntuacion: 1
         }
       ],
       tipo: 'radio'
@@ -62,43 +64,54 @@ export const PREGUNTAS = {
   ],
   pagina_2: [
     {
-      titulo: 'Pregunta 4',
+      titulo: '¿Qué consecuencias ha provocado la brecha?',
       respuestas: [
         {
-          respuesta: 'Respuesta 1',
+
+          respuesta: 'Se han perdido o destruido datos personales, de tal manera que no se pueden recuperar',
           puntuacion: 2,
-          id: 'respuesta_1'
+          id: 'respuesta_4_1'
         },
         {
-          respuesta: 'Respuesta 2',
+          respuesta: 'Se han modificado datos personales que pueden provocar daños a los afectados',
           puntuacion: 5,
-          id: 'respuesta_2'
+          id: 'respuesta_4_2'
         },
         {
-          respuesta: 'Respuesta 3',
+          respuesta: 'Personas u organizaciones externas han accedido a esos datos. ',
           puntuacion: 1,
-          id: 'respuesta_3'
+          id: 'respuesta_4_3'
         }
       ],
       tipo: 'checkbox'
     },
     {
-      titulo: 'Pregunta 5',
+      titulo: '¿Cuál es el grado de daños que puede afectar a las personas afectadas?',
       respuestas: [
         {
-          respuesta: 'Respuesta 1',
+          respuesta: 'No se verán afectadas, y en caso que sean afectadas pueden arreglarlo sin ningún problema (nivel bajo)',
           puntuacion: 2,
-          id: 'respuesta_4'
+          id: 'respuesta_5_1'
         },
         {
-          respuesta: 'Respuesta 2',
+          respuesta: 'Las personas afectadas podrán encontrar inconvenientes importantes, pero que a pesar de tener algunos problemas se podrán solucionar.(nivel medio)',
           puntuacion: 5,
-          id: 'respuesta_5'
+          id: 'respuesta_5_2'
         },
         {
-          respuesta: 'Respuesta 3',
+          respuesta: 'Las personas afectadas podrán enfrentar consecuencias importantes que pueden superar aunque con serias dificultades (nivel alto)',
           puntuacion: 1,
-          id: 'respuesta_6'
+          id: 'respuesta_5_3'
+        },
+        {
+          respuesta: 'Las personas afectadas no podrán superar que sus datos hayan sido afectados (nivel muy alto)',
+          puntuacion: 1,
+          id: 'respuesta_5_4'
+        },
+        {
+          respuesta: 'o	Desconocido (ningún nivel, en este caso se contará como 0)',
+          puntuacion: 1,
+          id: 'respuesta_5_5'
         }
       ],
       tipo: 'radio'
@@ -106,47 +119,27 @@ export const PREGUNTAS = {
   ],
   pagina_3: [
     {
-      titulo: 'Pregunta 6',
+      titulo: 'Tipos de datos afectados',
       respuestas: [
         {
-          respuesta: 'Respuesta 1',
+          respuesta: 'Datos de escaso riesgo: datos de contacto, de educación, familiares, profesionales, biográficos',
           puntuacion: 2,
-          id: 'respuesta_1'
+          id: 'respuesta_6_1'
         },
         {
-          respuesta: 'Respuesta 2',
+          respuesta: 'Datos de comportamiento: localización, tráfico, hábitos y preferencias',
           puntuacion: 5,
-          id: 'respuesta_2'
+          id: 'respuesta_6_2'
         },
         {
-          respuesta: 'Respuesta 3',
+          respuesta: 'Datos financieros: transacciones, posiciones, ingresos, cuentas, facturas',
           puntuacion: 1,
-          id: 'respuesta_3'
+          id: 'respuesta_6_3'
         },
         {
-          respuesta: 'Respuesta 4',
+          respuesta: 'Datos sensibles: de salud, biométricos, datos relativos a la vida sexual, etc.',
           puntuacion: 1,
-          id: 'respuesta_4'
-        },
-        {
-          respuesta: 'Respuesta 5',
-          puntuacion: 1,
-          id: 'respuesta_5'
-        },
-        {
-          respuesta: 'Respuesta 6',
-          puntuacion: 1,
-          id: 'respuesta_6'
-        },
-        {
-          respuesta: 'Respuesta 7',
-          puntuacion: 1,
-          id: 'respuesta_7'
-        },
-        {
-          respuesta: 'Respuesta 8',
-          puntuacion: 1,
-          id: 'respuesta_8'
+          id: 'respuesta_6_4'
         }
       ],
       tipo: 'checkbox'
@@ -154,54 +147,54 @@ export const PREGUNTAS = {
   ],
   pagina_4: [
     {
-      titulo: 'Pregunta 7',
+      titulo: 'Entre las personas afectadas, ¿se encuentra algún menor?',
       respuestas: [
         {
-          respuesta: 'Respuesta 1',
+          respuesta: 'Si',
           puntuacion: 2,
-          id: 'respuesta_9'
+          id: 'respuesta_7_1'
         },
         {
-          respuesta: 'Respuesta 2',
+          respuesta: 'No',
           puntuacion: 5,
-          id: 'respuesta_10'
+          id: 'respuesta_7_2'
         },
         {
-          respuesta: 'Respuesta 3',
+          respuesta: 'Desconocido',
           puntuacion: 1,
-          id: 'respuesta_11'
+          id: 'respuesta_7_3'
         }
       ],
       tipo: 'radio'
     },
     {
-      titulo: 'Pregunta 8',
+      titulo: 'Entre las personas afectadas ¿Existen miembros de colectivos vulnerables (violencia de género o riesgo de exclusión social)?',
       respuestas: [
         {
-          respuesta: 'Respuesta 1',
+          respuesta: 'Si',
           puntuacion: 2,
-          id: 'respuesta_12'
+          id: 'respuesta_8_1'
         },
         {
-          respuesta: 'Respuesta 2',
+          respuesta: 'No',
           puntuacion: 5,
-          id: 'respuesta_13'
+          id: 'respuesta_8_2'
         },
         {
-          respuesta: 'Respuesta 3',
+          respuesta: 'Desconocido',
           puntuacion: 1,
-          id: 'respuesta_14'
+          id: 'respuesta_8_3'
         }
       ],
       tipo: 'radio'
     },
     {
-      titulo: 'Pregunta 9 (Sólo admite números)',
+      titulo: '¿Cuantas personas están afectadas?',
       respuestas: [
         {
           respuesta: 'Respuesta 1',
           puntuacion: 2,
-          id: 'respuesta_13'
+          id: 'respuesta_9_1'
         }
       ],
       tipo: 'number'
@@ -209,36 +202,36 @@ export const PREGUNTAS = {
   ],
   pagina_5: [
     {
-      titulo: 'Pregunta 10',
+      titulo: '¿Sabes cuando se produjo la brecha?',
       respuestas: [
         {
-          respuesta: 'Respuesta 1',
+          respuesta: 'Si',
           puntuacion: 2,
-          id: 'respuesta_14'
+          id: 'respuesta_12_1'
+        },
+        {
+          respuesta: 'No',
+          puntuacion: 5,
+          id: 'respuesta_12_2'
+        },
+        {
+          respuesta: 'Desconocido',
+          puntuacion: 1,
+          id: 'respuesta_12_3'
         }
       ],
-      tipo: 'date'
+      tipo: 'Radio'
     },
     {
-      titulo: 'Pregunta 12',
+      titulo: 'En caso de saberla, índique cuando se produjo',
       respuestas: [
         {
-          respuesta: 'Respuesta 1',
+          respuesta: 'Si',
           puntuacion: 2,
-          id: 'respuesta_15'
-        },
-        {
-          respuesta: 'Respuesta 2',
-          puntuacion: 5,
-          id: 'respuesta_16'
-        },
-        {
-          respuesta: 'Respuesta 3',
-          puntuacion: 1,
-          id: 'respuesta_17'
+          id: 'respuesta_10_1'
         }
       ],
-      tipo: 'radio'
+      tipo: 'Date'
     }
   ]
 };
