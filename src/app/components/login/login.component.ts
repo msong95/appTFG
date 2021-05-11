@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
   }
 
   sendForm(event){
-    if(event.access) this.router.navigate(['/preguntas1'])
+    if(event.access) this.router.navigate(['/dashboard'])
 
   }
 

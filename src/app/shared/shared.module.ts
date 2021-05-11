@@ -5,9 +5,12 @@ import { PreguntasComponent } from './preguntas/preguntas.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { TableComponent } from './table/table.component';
+import { UpdateComponent } from './update/update.component';
+
 
 @NgModule({
-  declarations: [FormularioComponent, PreguntasComponent, DashboardComponent],
+  declarations: [FormularioComponent, PreguntasComponent, DashboardComponent, TableComponent, UpdateComponent],
   imports: [
     CommonModule,
     FormsModule,

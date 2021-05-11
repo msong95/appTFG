@@ -33,4 +33,7 @@ export class PreguntasComponent implements OnInit {
       }
     }
   }
+
+  caculateLevel() {
+  }
 }

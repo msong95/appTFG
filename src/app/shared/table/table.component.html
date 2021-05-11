@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <div class="container">
+      
+        <div id="htmlData">
+            <h3>
+                Historial de brechas
+            </h3>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+              <th scope="col">
+                Id Brecha
+            </th>
+            <th scope="col">
+                Descripción
+            </th>   
+             <th scope="col">
+                Fecha
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr *ngFor="let fila of preguntas.listado">
+            <td >
+                <input type="text"  [value]= "fila.id_brecha"  style="display:none;" id="id_brecha">
+                {{ fila.id_brecha }}
+            </td>
+            <td>
+                <input type="text"  [value]= "fila.brecha"  style="display:none;" id="brecha"> 
+                {{ fila.brecha }}
+            </td>
+       
+            <td>
+                <input type="text"  [value]= "fila.fecha"  style="display:none;" id="fecha"> 
+                {{ fila.fecha }}
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+
+</div>
+<button class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="generarPDF()">Descargar historial</button>
+</div>
+</div>
