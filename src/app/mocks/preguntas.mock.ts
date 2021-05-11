@@ -109,7 +109,7 @@ export const PREGUNTAS = {
           id: 'respuesta_5_4'
         },
         {
-          respuesta: 'o	Desconocido (ningún nivel, en este caso se contará como 0)',
+          respuesta: 'Desconocido (ningún nivel, en este caso se contará como 0)',
           puntuacion: 1,
           id: 'respuesta_5_5'
         }
@@ -192,7 +192,7 @@ export const PREGUNTAS = {
       titulo: '¿Cuantas personas están afectadas?',
       respuestas: [
         {
-          respuesta: 'Respuesta 1',
+          respuesta: '',
           puntuacion: 2,
           id: 'respuesta_9_1'
         }
@@ -202,36 +202,30 @@ export const PREGUNTAS = {
   ],
   pagina_5: [
     {
-      titulo: '¿Sabes cuando se produjo la brecha?',
+      titulo: '¿Cuanto tiempo ha pasado desde el conocimiento de la brecha?',
       respuestas: [
         {
-          respuesta: 'Si',
+          respuesta: 'Una semana',
           puntuacion: 2,
           id: 'respuesta_12_1'
         },
         {
-          respuesta: 'No',
+          respuesta: 'Dos semanas',
           puntuacion: 5,
           id: 'respuesta_12_2'
         },
         {
-          respuesta: 'Desconocido',
+          respuesta: 'Un mes',
           puntuacion: 1,
           id: 'respuesta_12_3'
+        },
+        {
+          respuesta: 'Más de un mes',
+          puntuacion: 1,
+          id: 'respuesta_12_4'
         }
       ],
       tipo: 'Radio'
     },
-    {
-      titulo: 'En caso de saberla, índique cuando se produjo',
-      respuestas: [
-        {
-          respuesta: 'Si',
-          puntuacion: 2,
-          id: 'respuesta_10_1'
-        }
-      ],
-      tipo: 'Date'
-    }
   ]
 };

@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container">
     <form>
-      <h3>Detalles sobre la brecha de segurdad:</h3>
+      <h3>Detalles sobre la brecha de seguridad:</h3>
       <fieldset class="row mb-3" *ngFor="let pregunta of preguntasActuales">
         <h5>{{ pregunta.titulo }}</h5>
         <div class="col-sm-10">
@@ -9,10 +9,11 @@
             <input
               class="form-check-input" [ngClass]="{ 'form-control': pregunta.tipo === 'number' }"
               [type]="pregunta.tipo"
-              value=""
+              [value]="respuesta.respuesta"
             />
             <label class="form-check-label" for="gridRadios1">
               {{ respuesta.respuesta }}
+          
             </label>
           </div>
         </div>

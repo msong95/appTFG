@@ -23,14 +23,20 @@ export class TableComponent implements OnInit {
 
   }
 
-  generarPDF(){ 
+  generarPDF(id, brecha, fecha){ 
+
+
 
       const DATA = document.getElementById('htmlData');
       const doc = new jsPDF('p', 'pt', 'a4');
       const options = {
-        background: 'white',
+        background: 'green',
         scale: 3
       };
+
+      doc.text("\n"+"\nID: " + id + "\n Descripción: " + brecha + "\n Fecha:" + fecha ,10,10);
+      doc.save(`${new Date().toISOString()}_tutorial.pdf`);
+      /*
       html2canvas(DATA, options).then((canvas) => {
   
         const img = canvas.toDataURL('image/PNG');
@@ -46,7 +52,7 @@ export class TableComponent implements OnInit {
       }).then((docResult) => {
         docResult.save(`${new Date().toISOString()}_tutorial.pdf`);
       });
-
+*/
   }
 
 }

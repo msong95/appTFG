@@ -16,6 +16,9 @@
              <th scope="col">
                 Fecha
             </th>
+            <th scope="col">
+                PDF
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -33,13 +36,15 @@
                 <input type="text"  [value]= "fila.fecha"  style="display:none;" id="fecha"> 
                 {{ fila.fecha }}
             </td>
+            
+            <td>
+                <i class="fas fa-file-download" (click)="generarPDF(fila.id_brecha, fila.brecha, fila.fecha)"></i>
+            </td>
 
         </tr>
     </tbody>
 </table>
-
-
 </div>
-<button class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="generarPDF()">Descargar historial</button>
+<!-- <button class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="generarPDF()">Descargar historial</button>-->
 </div>
 </div>

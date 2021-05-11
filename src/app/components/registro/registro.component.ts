@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { GlobalConstants } from 'src/app/common/global-constants';
 import { FormContent } from 'src/app/interfaces/formContent.interface';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -16,6 +17,7 @@ export class RegistroComponent implements OnInit {
     classTitle: 'text-center',
     btnBlock: true,
     buttonClass: 'btn btn-secondary p-2',
+    id: 'registro',
     inputs: [
       {
         title: 'Username',
@@ -55,11 +57,18 @@ export class RegistroComponent implements OnInit {
 
   constructor(private router: Router, private auth: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
 
-  async registro(event) {
-    const response = await this.auth.registro(event);
-    console.log(response);
+    if(GlobalConstants.Login!=true){
+      this.router.navigate(['/registro'])
+
+    }else{
+      this.router.navigate(['/dashboard'])
+    }
+  }
+
+  async sendForm(event) {
+    GlobalConstants.Login=true;
     this.router.navigate(['/dashboard']);
   }
 }

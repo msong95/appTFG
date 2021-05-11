@@ -11,18 +11,21 @@ import { Usuario } from '../models/usuario.model';
 export class AuthService {
 
 
-
   constructor() { 
 
   }
 
-
-
-  login(): Promise<any>{
+  login(email, clave): Promise<any>{
     try {
       return new Promise((resolve,reject) => {
-        GlobalConstants.Login=true;
-      resolve({message: 'Login correcto', access: true})
+
+        if(email==="admin" && clave=="admin"){
+          GlobalConstants.Login=true;
+          resolve({message: 'Login correcto', access: true, id:email})
+        }else{
+          resolve({message: 'Login incorrecto', access: false})
+        }
+      
     })
     } catch (error) {
       return error
@@ -30,8 +33,9 @@ export class AuthService {
 
   }
 
-  registro(values: Usuario): Promise <any>{
-    console.log(values)
+  registro(usuario: Usuario): Promise <any>{
+
+    console.log("Username: " ,usuario.username)
     try {
        return new Promise ((resolve,reject)=>{
         resolve({message:'Registro correcto'})

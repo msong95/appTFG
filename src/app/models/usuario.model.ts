@@ -8,3 +8,9 @@ export class Usuario {
         this.username=username;
     }
 }
+
+export interface usuario{
+    username:string;
+    email: string;
+    password: string;
+}

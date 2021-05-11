@@ -1,5 +1,6 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { GlobalConstants } from 'src/app/common/global-constants';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,5 +17,6 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+
   }
 }

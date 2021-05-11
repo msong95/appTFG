@@ -8,7 +8,8 @@ import{ GlobalConstants } from '../../common/global-constants';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [ AuthService ]
 })
 export class LoginComponent implements OnInit {
 
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
     buttonText: 'Enviar',
     buttonClass: 'btn-secondary btn p-2',
     btnBlock: false,
+    id:'login',
     inputs: [
     {
       title: 'Email',
@@ -41,22 +43,23 @@ export class LoginComponent implements OnInit {
 }
 
   constructor(private router: Router, private auth:AuthService) {
-
+    
    }
 
    
   ngOnInit(): void {
-    
-  }
 
+    if(GlobalConstants.Login!=true){
+      this.router.navigate(['/login'])
 
-  async login(){
-    const response = await this.auth.login();
-    console.log("Su valor es ",GlobalConstants.Login)
-    this.router.navigate(['/dashboard'])
+    }else{
+      this.router.navigate(['/dashboard'])
+    }
   }
 
   sendForm(event){
+    let tipo=String(this.formData.id)
+    console.log("información:",tipo)
     if(event.access) this.router.navigate(['/dashboard'])
 
   }
