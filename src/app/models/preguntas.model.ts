@@ -1,13 +1,14 @@
 export interface TotalPreguntas {
-  pagina_1: Preguntas[],
-  pagina_2: Preguntas[],
-  pagina_3: Preguntas[],
-  pagina_4: Preguntas[],
-  pagina_5: Preguntas[],
+  pagina_1: Pregunta[],
+  pagina_2: Pregunta[],
+  pagina_3: Pregunta[],
+  pagina_4: Pregunta[],
+  pagina_5: Pregunta[],
 }
 
-export interface Preguntas {
+export interface Pregunta {
     titulo: string;
+    seccion?: string;
     respuestas: Respuestas[];
     tipo: string;
   }

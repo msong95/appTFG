@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "maria-tfg": {
+      "hosting": {
+        "app-tfg": [
+          "maria-tfg"
+        ]
+      }
+    }
+  }
+}

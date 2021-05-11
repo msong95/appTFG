@@ -3,6 +3,7 @@ export const PREGUNTAS = {
     {
       id: 1,
       titulo: 'Pregunta 1',
+      seccion: 'pagina 1',
       respuestas: [
         {
           id: 'respuesta_1',

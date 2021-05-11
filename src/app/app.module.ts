@@ -14,6 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HomePreguntasComponent } from './components/home-preguntas/home-preguntas.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SharedModule } from './shared/shared.module';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from './../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,13 @@ import { SharedModule } from './shared/shared.module';
 
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

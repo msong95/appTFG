@@ -4,7 +4,17 @@
 
 export const environment = {
   production: false,
-  secret: '0123456789abcdef'
+  secret: '0123456789abcdef',
+  firebase: {
+    "apiKey": "AIzaSyDMAUoxqmL4PGd8v5XQeyi6D_BCAkhJPP4",
+    "authDomain": "maria-tfg.firebaseapp.com",
+    "databaseURL": "https://maria-tfg-default-rtdb.europe-west1.firebasedatabase.app",
+    "projectId": "maria-tfg",
+    "storageBucket": "maria-tfg.appspot.com",
+    "messagingSenderId": "575181844157",
+    "appId": "1:575181844157:web:8abe268d37a18f0f0e51d4"
+  }
+
 };
 
 /*
