@@ -1,14 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { brechas } from 'src/app/mocks/brechas.mock';
 import { totalBrecha } from 'src/app/models/brecha.model';
 import{ jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
+
 export class TableComponent implements OnInit {
 
   preguntas: totalBrecha = brechas;

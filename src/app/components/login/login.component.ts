@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormContent } from 'src/app/interfaces/formContent.interface';
+import{ GlobalConstants } from '../../common/global-constants';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { FormContent } from 'src/app/interfaces/formContent.interface';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
 
   public formData: FormContent = {
     formTitle: 'Formulario de login',
@@ -38,17 +40,20 @@ export class LoginComponent implements OnInit {
   ]
 }
 
-  constructor(private router: Router, private auth:AuthService) { }
+  constructor(private router: Router, private auth:AuthService) {
 
+   }
+
+   
   ngOnInit(): void {
-
+    
   }
 
 
   async login(){
-    //const response = await this.auth.login(this.loginForm.value);
-    //console.log(response)
-    this.router.navigate(['/preguntasHome'])
+    const response = await this.auth.login();
+    console.log("Su valor es ",GlobalConstants.Login)
+    this.router.navigate(['/dashboard'])
   }
 
   sendForm(event){

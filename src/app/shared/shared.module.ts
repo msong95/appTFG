@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormularioComponent } from './formulario/formulario.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
@@ -9,14 +10,17 @@ import { TableComponent } from './table/table.component';
 import { UpdateComponent } from './update/update.component';
 
 
+
 @NgModule({
   declarations: [FormularioComponent, PreguntasComponent, DashboardComponent, TableComponent, UpdateComponent],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [FormularioComponent, PreguntasComponent, DashboardComponent],
   providers: [AuthService]
 })
+
 export class SharedModule { }

@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
+
   public formData: FormContent = {
     formTitle: '',
     buttonText: 'Modificar',

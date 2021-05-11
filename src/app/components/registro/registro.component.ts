@@ -60,6 +60,6 @@ export class RegistroComponent implements OnInit {
   async registro(event) {
     const response = await this.auth.registro(event);
     console.log(response);
-    this.router.navigate(['/preguntasHome']);
+    this.router.navigate(['/dashboard']);
   }
 }

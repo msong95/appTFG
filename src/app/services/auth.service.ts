@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { rejects } from 'assert';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { GlobalConstants } from '../common/global-constants';
 import { Usuario } from '../models/usuario.model';
 
 @Injectable({
@@ -7,11 +10,18 @@ import { Usuario } from '../models/usuario.model';
 })
 export class AuthService {
 
-  constructor() { }
 
-  login(values: Usuario): Promise<any>{
+
+  constructor() { 
+
+  }
+
+
+
+  login(): Promise<any>{
     try {
       return new Promise((resolve,reject) => {
+        GlobalConstants.Login=true;
       resolve({message: 'Login correcto', access: true})
     })
     } catch (error) {
