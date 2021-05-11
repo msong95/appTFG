@@ -19,10 +19,3 @@ i {
     font-family: 'Courier New', Courier, monospace;
     text-transform: uppercase;
   }
-@media (max-width: 767px){
-
-    header {
-        display: none;
-    }
-
-}

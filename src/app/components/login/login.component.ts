@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormContent } from 'src/app/interfaces/formContent.interface';
 import{ GlobalConstants } from '../../common/global-constants';
+import * as Cookies from 'js-cookie';
 
 @Component({
   selector: 'app-login',
@@ -49,17 +50,18 @@ export class LoginComponent implements OnInit {
    
   ngOnInit(): void {
 
-    if(GlobalConstants.Login!=true){
-      this.router.navigate(['/login'])
+    if(Cookies.get("sesion")==="si"){
+      this.router.navigate(['/dashboard'])
 
     }else{
-      this.router.navigate(['/dashboard'])
+      this.router.navigate(['/login'])
     }
   }
 
   sendForm(event){
-    let tipo=String(this.formData.id)
-    console.log("información:",tipo)
+   // let tipo=String(this.formData.id)
+    //console.log("información:",tipo)
+
     if(event.access) this.router.navigate(['/dashboard'])
 
   }

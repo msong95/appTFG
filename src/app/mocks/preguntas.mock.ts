@@ -64,6 +64,7 @@ export const PREGUNTAS = {
   ],
   pagina_2: [
     {
+      id: 4,
       titulo: '¿Qué consecuencias ha provocado la brecha?',
       respuestas: [
         {
@@ -86,6 +87,7 @@ export const PREGUNTAS = {
       tipo: 'checkbox'
     },
     {
+      id: 5,
       titulo: '¿Cuál es el grado de daños que puede afectar a las personas afectadas?',
       respuestas: [
         {
@@ -119,6 +121,7 @@ export const PREGUNTAS = {
   ],
   pagina_3: [
     {
+      id: 6,
       titulo: 'Tipos de datos afectados',
       respuestas: [
         {
@@ -147,6 +150,7 @@ export const PREGUNTAS = {
   ],
   pagina_4: [
     {
+      id: 7,
       titulo: 'Entre las personas afectadas, ¿se encuentra algún menor?',
       respuestas: [
         {
@@ -168,6 +172,7 @@ export const PREGUNTAS = {
       tipo: 'radio'
     },
     {
+      id: 8,
       titulo: 'Entre las personas afectadas ¿Existen miembros de colectivos vulnerables (violencia de género o riesgo de exclusión social)?',
       respuestas: [
         {
@@ -189,6 +194,7 @@ export const PREGUNTAS = {
       tipo: 'radio'
     },
     {
+      id: 9,
       titulo: '¿Cuantas personas están afectadas?',
       respuestas: [
         {
@@ -202,30 +208,31 @@ export const PREGUNTAS = {
   ],
   pagina_5: [
     {
+      id: 10,
       titulo: '¿Cuanto tiempo ha pasado desde el conocimiento de la brecha?',
       respuestas: [
         {
           respuesta: 'Una semana',
           puntuacion: 2,
-          id: 'respuesta_12_1'
+          id: 'respuesta_10_1'
         },
         {
           respuesta: 'Dos semanas',
           puntuacion: 5,
-          id: 'respuesta_12_2'
+          id: 'respuesta_10_2'
         },
         {
           respuesta: 'Un mes',
           puntuacion: 1,
-          id: 'respuesta_12_3'
+          id: 'respuesta_10_3'
         },
         {
           respuesta: 'Más de un mes',
           puntuacion: 1,
-          id: 'respuesta_12_4'
+          id: 'respuesta_10_4'
         }
       ],
-      tipo: 'Radio'
+      tipo: 'radio'
     },
   ]
 };
