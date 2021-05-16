@@ -1,18 +1,29 @@
 <div class="wrapper">
   <div class="container">
     <form>
-      <h3>Detalles sobre la brecha de segurdad:</h3>
+      <h3>Detalles sobre la brecha de seguridad:</h3>
       <fieldset class="row mb-3" *ngFor="let pregunta of preguntasActuales">
         <h5>{{ pregunta.titulo }}</h5>
         <div class="col-sm-10">
           <div class="form-check" *ngFor="let respuesta of pregunta.respuestas">
             <input
-              class="form-check-input" [ngClass]="{ 'form-control': pregunta.tipo === 'number' }"
+              class="form-check-input" 
+              [name]="pregunta.id"
               [type]="pregunta.tipo"
-              value=""
+              [value]="respuesta.puntuacion"
+              *ngIf="pregunta.tipo== 'radio' || pregunta.tipo== 'checkbox'"
             />
+
+            <input
+            class="form-check-text" 
+            [type]="pregunta.tipo"
+            [value]="respuesta.puntuacion"
+            *ngIf="pregunta.tipo=='text' || pregunta.tipo=='number'"
+          />
+
             <label class="form-check-label" for="gridRadios1">
               {{ respuesta.respuesta }}
+          
             </label>
           </div>
         </div>

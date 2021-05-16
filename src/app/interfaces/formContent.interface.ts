@@ -6,7 +6,7 @@ export interface FormContent {
   buttonText: string;
   buttonClass: string;
   btnBlock:boolean;
-
+  id: string;
   inputs: Inputs[];
 }
 

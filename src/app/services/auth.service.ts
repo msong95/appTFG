@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { rejects } from 'assert';
 import { Usuario } from '../models/usuario.model';
 
 @Injectable({

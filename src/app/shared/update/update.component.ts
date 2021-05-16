@@ -1,4 +1,6 @@
+import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormContent } from 'src/app/interfaces/formContent.interface';
 import { AuthService } from 'src/app/services/auth.service';
@@ -15,13 +17,14 @@ export class UpdateComponent implements OnInit {
     classTitle: 'text-center',
     btnBlock: true,
     buttonClass: 'btn btn-secondary p-2',
+    id:'modificar',
     inputs: [
       {
         title: 'Username',
         tooltip: 'Enter your username',
         data: {
           type: 'text',
-          id: 'username'
+          id: 'username',
         }
       },
       {
@@ -47,18 +50,23 @@ export class UpdateComponent implements OnInit {
           type: 'password',
           id: 'repite_password'
         }
-      }
-
+      },
     ]
   };
 
   constructor(private router: Router, private auth: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   async update(event) {
     const response = await this.auth.registro(event);
-    console.log(response);
-    this.router.navigate(['/preguntasHome']);
+    console.log("hola ",response);
+   // this.router.navigate(['/preguntasHome']);
+  }
+
+  onSubmit() {
+
   }
 }

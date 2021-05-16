@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TotalPreguntas } from 'src/app/models/preguntas.model';
+import { PREGUNTAS } from 'src/app/mocks/preguntas.mock';
+import { Preguntas, TotalPreguntas } from 'src/app/models/preguntas.model';
 
 @Component({
   selector: 'app-preguntas',
@@ -13,6 +14,7 @@ export class PreguntasComponent implements OnInit {
   preguntasActuales;
   @Input() preguntas: TotalPreguntas;
   private paginasPreguntas: string[];
+
 
   constructor(public router: Router) {}
 
