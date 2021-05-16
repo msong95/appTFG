@@ -12,6 +12,7 @@
         </div>
         <div class="col-lg-2 col-xs-12 d-flex justify-content-end">
             <a [routerLink]="['\login']" > <i class="fas fa-user-alt">  </i></a>
+            <button class="btn btn-danger" (click)="logout()" *ngIf="logged">logout</button>
         </div>
 
     </div>
