@@ -11,10 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(private service: PreguntasService) { }
 
   ngOnInit(): void {
-    this.service.getAll().subscribe(
-      response => console.log(response),
-      error => console.log(error)
-    )
+
   }
 
 }

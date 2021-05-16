@@ -37,9 +37,10 @@ export class FormularioComponent implements OnInit {
   }
 
   async onSubmit(){
-    console.log(this.formulario.value)
-    const response = await this.auth.login(this.formulario.value)
-    this.sendForm.emit(response);
+    // console.log(this.formulario.value)
+    // const response = await this.auth.login(this.formulario.value)
+    this.sendForm.emit(this.formulario.value);
+    this.formulario.reset()
   }
 
 }

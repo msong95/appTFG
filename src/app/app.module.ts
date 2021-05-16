@@ -14,7 +14,6 @@ import { HomeComponent } from './components/home/home.component';
 import { HomePreguntasComponent } from './components/home-preguntas/home-preguntas.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SharedModule } from './shared/shared.module';
-import { AngularFireModule } from '@angular/fire';
 import { environment } from './../environments/environment';
 
 @NgModule({
@@ -35,8 +34,7 @@ import { environment } from './../environments/environment';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    SharedModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

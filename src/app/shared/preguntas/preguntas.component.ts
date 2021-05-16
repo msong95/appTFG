@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { TotalPreguntas } from 'src/app/models/preguntas.model';
+import { PreguntasService } from 'src/app/services/preguntas.service';
 
 @Component({
   selector: 'app-preguntas',
@@ -11,15 +12,21 @@ export class PreguntasComponent implements OnInit {
   paginador: number;
   paginaActual = 1;
   preguntasActuales;
-  @Input() preguntas: TotalPreguntas;
+  //@Input() preguntas: TotalPreguntas;
+  preguntas: any;
   private paginasPreguntas: string[];
+  respuestas: any;
 
-  constructor(public router: Router) {}
+  @ViewChild('formulario') formulario: ElementRef;
 
-  ngOnInit(): void {
+  constructor(public router: Router, private preguntasService: PreguntasService) {}
+
+  async ngOnInit() {
+    this.preguntas = await this.preguntasService.getAll()
     this.paginasPreguntas = Object.keys(this.preguntas);
     this.paginador = this.paginasPreguntas.length;
     this.preguntasActuales = this.preguntas[this.paginasPreguntas[0]]
+    console.log(this.preguntas)
   }
 
   changePage(change) {
@@ -32,8 +39,14 @@ export class PreguntasComponent implements OnInit {
         this.preguntasActuales = this.preguntas[this.paginasPreguntas[this.paginaActual - 1]]
       }
     }
+    console.log(this.formulario.nativeElement.value)
   }
 
   caculateLevel() {
+
+  }
+
+  ngOnChanges(changes){
+    console.log(changes)
   }
 }

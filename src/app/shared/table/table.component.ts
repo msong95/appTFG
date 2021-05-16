@@ -21,7 +21,7 @@ export class TableComponent implements OnInit {
 
   }
 
-  generarPDF(){ 
+  generarPDF(){
 
       const DATA = document.getElementById('htmlData');
       const doc = new jsPDF('p', 'pt', 'a4');
@@ -30,9 +30,9 @@ export class TableComponent implements OnInit {
         scale: 3
       };
       html2canvas(DATA, options).then((canvas) => {
-  
+
         const img = canvas.toDataURL('image/PNG');
-  
+
         // Add image Canvas to PDF
         const bufferX = 15;
         const bufferY = 15;

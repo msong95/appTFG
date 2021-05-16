@@ -1,44 +1,30 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList }from '@angular/fire/database';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Pregunta } from '../models/preguntas.model';
 @Injectable({
   providedIn: 'root'
 })
 export class PreguntasService {
 
-  private dbList: AngularFireList<any>;
+  preguntas: Pregunta[];
 
-  constructor(private db: AngularFireDatabase) {
-    this.dbList = this.db.list('/users')
+  constructor(private http: HttpClient) {
    }
 
-   getAll(): Observable<any[]>{
-     return this.dbList.snapshotChanges()
-   }
-
-   addPregunta(pregunta: Pregunta){
-    pregunta = {
-      titulo: 'Pregunta 1',
-      seccion: 'pagina 1',
-      respuestas: [
-        {
-          id: 'respuesta_1',
-          respuesta: 'Respuesta 1',
-          puntuacion: 2
-        },
-        {
-          respuesta: 'Respuesta 2',
-          puntuacion: 5
-        },
-        {
-          respuesta: 'Respuesta 3',
-          puntuacion: 1
-        }
-      ],
-      tipo: 'radio'
-    }
+   public getAll(): Promise<Pregunta[]> {
+    return new Promise((resolve, reject) => {
+      this.http.get<Pregunta[]>(`${environment.backendUrl}/preguntas`).subscribe(
+        response => resolve(response),
+        error => reject(error)
+      )
+    })
+    // this.http.get(`${environment.backendUrl}/preguntas`).subscribe(response =>
+    //   console.log(response))
+    // return this.preguntas;
 
 
    }
+
 }

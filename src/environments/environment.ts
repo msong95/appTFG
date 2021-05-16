@@ -13,7 +13,8 @@ export const environment = {
     "storageBucket": "maria-tfg.appspot.com",
     "messagingSenderId": "575181844157",
     "appId": "1:575181844157:web:8abe268d37a18f0f0e51d4"
-  }
+  },
+  backendUrl: 'http://localhost:3000/api'
 
 };
 
