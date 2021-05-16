@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PREGUNTAS } from 'src/app/mocks/preguntas.mock';
-import { Preguntas, TotalPreguntas } from 'src/app/models/preguntas.model';
+import { TotalPreguntas } from 'src/app/models/preguntas.model';
 
 @Component({
   selector: 'app-preguntas',
