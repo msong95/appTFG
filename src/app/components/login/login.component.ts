@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
@@ -6,6 +6,7 @@ import { FormContent } from 'src/app/interfaces/formContent.interface';
 import{ GlobalConstants } from '../../common/global-constants';
 import * as Cookies from 'js-cookie';
 
+declare var $:any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,8 +14,7 @@ import * as Cookies from 'js-cookie';
   providers: [ AuthService ]
 })
 export class LoginComponent implements OnInit {
-
-
+  public error: string = '';
   public formData: FormContent = {
     formTitle: 'Formulario de login',
     classTitle: 'text-center',
@@ -37,32 +37,39 @@ export class LoginComponent implements OnInit {
       tooltip: 'Enter your password',
       data: {
         type: 'password',
-        id: 'password1'
+        id: 'password'
       }
     }
   ]
 }
 
   constructor(private router: Router, private auth:AuthService) {
-    
+
    }
 
-   
+
   ngOnInit(): void {
 
-    if(Cookies.get("sesion")==="si"){
-      this.router.navigate(['/dashboard'])
-
-    }else{
-      this.router.navigate(['/login'])
-    }
   }
 
-  sendForm(event){
-   // let tipo=String(this.formData.id)
-    //console.log("información:",tipo)
+  async sendForm(event){
+    const response = await this.auth.login(event);
+    console.log(response)
+    if(response.token){
+      localStorage.setItem('token', response.token);
+      this.router.navigate(['/preguntasHome']);
+    } else {
+        this.error = response.error;
+        $('.toast').toast('show');
 
-    if(event.access) this.router.navigate(['/dashboard'])
+
+      //this.router.navigate(['/login']);
+    }
+    // this.router.navigate(['/preguntasHome']);
+
+  }
+  showToast(){
+    $('.toast').toast('show');
 
   }
 

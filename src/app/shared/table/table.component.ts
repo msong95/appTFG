@@ -23,7 +23,7 @@ export class TableComponent implements OnInit {
 
   }
 
-  generarPDF(id, brecha, fecha){ 
+  generarPDF(id, brecha, fecha){
 
 
 
@@ -38,9 +38,9 @@ export class TableComponent implements OnInit {
       doc.save(`${new Date().toISOString()}_tutorial.pdf`);
       /*
       html2canvas(DATA, options).then((canvas) => {
-  
+
         const img = canvas.toDataURL('image/PNG');
-  
+
         // Add image Canvas to PDF
         const bufferX = 15;
         const bufferY = 15;
