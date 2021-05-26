@@ -15,12 +15,15 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.logged = localStorage.getItem('token') ? true : false
+    if(this.logged==true){
+      this.router.navigate(['/dashboard'])
+    }
   }
 
   public logout(){
     localStorage.removeItem('token');
     this.logged = false;
-    this.router.navigate(['/login'])
+    this.router.navigate(['/home'])
   }
 
 }

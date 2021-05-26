@@ -15,6 +15,7 @@ declare var $:any;
 })
 export class LoginComponent implements OnInit {
   public error: string = '';
+  htmlYouWantToAdd;
   public formData: FormContent = {
     formTitle: 'Formulario de login',
     classTitle: 'text-center',
@@ -49,6 +50,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
+   
     if(localStorage.getItem('token')){
       this.router.navigate(['/dashboard'])
     }
@@ -56,20 +58,23 @@ export class LoginComponent implements OnInit {
 
   async sendForm(event){
     const response = await this.auth.login(event);
-    console.log(response)
+    
+
+    console.log(response);
+
     if(response.token){
       localStorage.setItem('token', response.token);
-      this.router.navigate(['/preguntasHome']);
-    } else {
+      this.router.navigate(['/dashboard']);
+    } else{
+        this.addHTML();
         this.error = response.error;
-        $('.toast').toast('show');
-
-
-      //this.router.navigate(['/login']);
+        this.showToast();
     }
-    // this.router.navigate(['/preguntasHome']);
-
   }
+
+ addHTML() {
+    this.htmlYouWantToAdd = "<b>Error, no se ha podido realizar el login</b>";
+}
   showToast(){
     $('.toast').toast('show');
 

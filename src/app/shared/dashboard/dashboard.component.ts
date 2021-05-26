@@ -19,4 +19,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  
+  preguntasHome() {
+    this.router.navigate(['/preguntasHome'])
+  }
 }

@@ -1,5 +1,6 @@
 <div class="wrapper">
   <div class="container">
     <app-formulario [formContent]="formData" (sendForm)="sendForm($event)"></app-formulario>
+    <div *ngIf="htmlYouWantToAdd" [innerHTML]="htmlYouWantToAdd"></div>
   </div>
 </div>

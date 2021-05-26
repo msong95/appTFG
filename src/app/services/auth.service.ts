@@ -24,6 +24,7 @@ export class AuthService {
         reject(error)
       }
     });
+    
   }
 
   registro(values: Usuario): Promise<any> {

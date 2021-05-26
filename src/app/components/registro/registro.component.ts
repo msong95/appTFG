@@ -4,13 +4,15 @@ import { Router } from '@angular/router';
 import { GlobalConstants } from 'src/app/common/global-constants';
 import { FormContent } from 'src/app/interfaces/formContent.interface';
 import { AuthService } from 'src/app/services/auth.service';
-
+declare var $:any;
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
+  public error: string = '';
+  htmlYouWantToAdd;
   public formData: FormContent = {
     formTitle: 'Formulario de registro',
     buttonText: 'Enviar',
@@ -58,17 +60,32 @@ export class RegistroComponent implements OnInit {
   constructor(private router: Router, private auth: AuthService) {}
 
   ngOnInit(): void {
-
-    if(GlobalConstants.Login!=true){
-      this.router.navigate(['/registro'])
-
-    }else{
+    if(localStorage.getItem('token')){
       this.router.navigate(['/dashboard'])
     }
+
   }
 
   async sendForm(event) {
-    GlobalConstants.Login=true;
-    this.router.navigate(['/dashboard']);
+    
+    // primero comprobamos que las claves son iguales
+  let clave = String((document.getElementById("password") as HTMLInputElement).value);
+  let clave1 = String((document.getElementById("repite_password") as HTMLInputElement).value);
+  if(clave===clave1){
+    const response = await this.auth.registro(event);
+    if(response.error==="0"){
+      localStorage.setItem('token', response.token);
+      this.router.navigate(['/dashboard']);
+    } else{
+        this.error = response.error;
+        this.htmlYouWantToAdd="<b>Error, el email ya está registrado</b>"
+    
+    }
+  }else{
+    this.htmlYouWantToAdd="<b>Error, las claves no coinciden</b>"
   }
+
+
+  }
+
 }

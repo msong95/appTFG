@@ -14,8 +14,8 @@ export const environment = {
     "messagingSenderId": "575181844157",
     "appId": "1:575181844157:web:8abe268d37a18f0f0e51d4"
   },
-  //backendUrl: 'http://localhost:3000/api',
-  backendUrl: 'https://stormy-tundra-67758.herokuapp.com/api'
+  backendUrl: 'http://localhost:3000/api',
+ // backendUrl: 'https://stormy-tundra-67758.herokuapp.com/api'
 
 };
 

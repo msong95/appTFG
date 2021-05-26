@@ -60,9 +60,9 @@ export class UpdateComponent implements OnInit {
 
   }
 
-  async update(event) {
+  async sendForm(event) {
     const response = await this.auth.registro(event);
-    console.log("hola ",response);
+   // console.log("hola ",response);
    // this.router.navigate(['/preguntasHome']);
   }
 
