@@ -11,6 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
+  public error: string = '';
+  htmlYouWantToAdd;
   public formData: FormContent = {
     formTitle: '',
     buttonText: 'Modificar',
@@ -61,12 +63,26 @@ export class UpdateComponent implements OnInit {
   }
 
   async sendForm(event) {
-    const response = await this.auth.registro(event);
-   // console.log("hola ",response);
-   // this.router.navigate(['/preguntasHome']);
+  
+    
+    // primero comprobamos que las claves son iguales
+    let clave = String((document.getElementById("password") as HTMLInputElement).value);
+    let clave1 = String((document.getElementById("repite_password") as HTMLInputElement).value);
+    
+    if(clave===clave1){
+      console.log("modificamos")
+      const response = await this.auth.modificar(event);
+      if(response){
+        this.htmlYouWantToAdd="<b>Modifiación correcta</b>"
+      } else{
+          this.error = response.error;
+          this.htmlYouWantToAdd="<b>Modifiación incorrecta</b>"
+      
+      }
+    }else{
+      this.htmlYouWantToAdd="<b>Error, las claves no coinciden</b>"
+    }
+  
   }
 
-  onSubmit() {
-
-  }
 }

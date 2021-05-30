@@ -71,6 +71,7 @@ export class RegistroComponent implements OnInit {
     // primero comprobamos que las claves son iguales
   let clave = String((document.getElementById("password") as HTMLInputElement).value);
   let clave1 = String((document.getElementById("repite_password") as HTMLInputElement).value);
+  
   if(clave===clave1){
     const response = await this.auth.registro(event);
     if(response.error==="0"){

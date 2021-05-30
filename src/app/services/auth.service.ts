@@ -42,4 +42,20 @@ export class AuthService {
       }
     });
   }
+
+  modificar(values: Usuario): Promise<any> {
+    let headers = {
+      ['content-type']: 'application/json'
+    };
+    return new Promise(async (resolve, reject) => {
+      try {
+        const response = await this.http
+          .post(`${environment.backendUrl}/auth/modificar`, values, { headers })
+          .toPromise();
+        resolve(response);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
 }

@@ -3,9 +3,6 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormContent } from 'src/app/interfaces/formContent.interface';
-import{ GlobalConstants } from '../../common/global-constants';
-import * as Cookies from 'js-cookie';
-
 declare var $:any;
 @Component({
   selector: 'app-login',
@@ -59,7 +56,7 @@ export class LoginComponent implements OnInit {
   async sendForm(event){
     const response = await this.auth.login(event);
     
-
+    let email = String((document.getElementById("email") as HTMLInputElement).value);
     console.log(response);
 
     if(response.token){
