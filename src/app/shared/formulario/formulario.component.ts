@@ -33,11 +33,20 @@ export class FormularioComponent implements OnInit {
       this.inputForms[input.data.id] = new FormControl('',input.data.validators)
     });
     this.formulario = new FormGroup(this.inputForms)
+    let tipo=String(this.formContent.id)
+   // console.log(tipo)
+    let usuario= JSON.parse(localStorage.getItem('usuario'))
+    console.log("datos",usuario)
+    
+     if(tipo=="modificar"){
+       this.formulario.setValue({username: "" , email: usuario.email, password:usuario.password, repite_password:usuario.password})
+     }
+
 
   }
 
   async onSubmit(){
-    // console.log(this.formulario.value)
+
     // const response = await this.auth.login(this.formulario.value)f
     this.sendForm.emit(this.formulario.value);
    

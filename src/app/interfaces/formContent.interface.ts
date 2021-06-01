@@ -16,6 +16,7 @@ export interface Inputs {
   data: {
     validators?: ValidatorFn[];
     type: string,
-    id: string
+    id: string,
+    value?: string,
   }
 }

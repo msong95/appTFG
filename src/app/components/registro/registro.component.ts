@@ -74,12 +74,13 @@ export class RegistroComponent implements OnInit {
   
   if(clave===clave1){
     const response = await this.auth.registro(event);
-    if(response.error==="0"){
-      localStorage.setItem('token', response.token);
-      this.router.navigate(['/dashboard']);
+    if(response.token==null){
+      this.error = response.error;
+      this.htmlYouWantToAdd="<b>Error, el email ya está registrado</b>"
     } else{
-        this.error = response.error;
-        this.htmlYouWantToAdd="<b>Error, el email ya está registrado</b>"
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('usuario', JSON.stringify(response.token));
+        this.router.navigate(['/dashboard']);
     
     }
   }else{

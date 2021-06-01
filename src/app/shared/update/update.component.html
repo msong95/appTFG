@@ -4,6 +4,7 @@
         Editar datos usuario
     </h3>
       <app-formulario [formContent]="formData" (sendForm)="sendForm($event)"></app-formulario>
+      <div *ngIf="htmlYouWantToAdd" [innerHTML]="htmlYouWantToAdd"></div>
     </div>
   </div>
   

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormContent } from 'src/app/interfaces/formContent.interface';
+import { Usuario } from 'src/app/models/usuario.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -13,6 +14,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class UpdateComponent implements OnInit {
   public error: string = '';
   htmlYouWantToAdd;
+  usuario: Usuario;
   public formData: FormContent = {
     formTitle: '',
     buttonText: 'Modificar',
@@ -27,6 +29,7 @@ export class UpdateComponent implements OnInit {
         data: {
           type: 'text',
           id: 'username',
+          value:"hola"
         }
       },
       {
@@ -34,7 +37,7 @@ export class UpdateComponent implements OnInit {
         tooltip: 'Invalid Email',
         data: {
           type: 'email',
-          id: 'email'
+          id: 'email',
         }
       },
       {
@@ -56,9 +59,11 @@ export class UpdateComponent implements OnInit {
     ]
   };
 
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(private router: Router, private auth: AuthService) {
+  }
 
   ngOnInit(): void {
+
 
   }
 
@@ -70,11 +75,11 @@ export class UpdateComponent implements OnInit {
     let clave1 = String((document.getElementById("repite_password") as HTMLInputElement).value);
     
     if(clave===clave1){
-      console.log("modificamos")
+     //console.log("modificamos")
       const response = await this.auth.modificar(event);
       if(response){
         this.htmlYouWantToAdd="<b>Modifiación correcta</b>"
-      } else{
+      } else{ 
           this.error = response.error;
           this.htmlYouWantToAdd="<b>Modifiación incorrecta</b>"
       

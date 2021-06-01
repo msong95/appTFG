@@ -4,7 +4,7 @@
     <label [for]="input.data.id" class="form-label">{{input.title}}
       <small class="error" *ngIf="formulario.get(input.data.id).hasError('required')">*</small>
     </label>
-    <input [type]="input.data.type" class="form-control" [id]="input.data.id" name="{{input.data.id}}" formControlName="{{input.data.id}}">
+    <input [type]="input.data.type" class="form-control" [id]="input.data.id" name="{{input.data.id}}"  formControlName="{{input.data.id}}">
 
     <div *ngIf="formulario.get(input.data.id).errors && formulario.get(input.data.id).touched">
       <small class="error" *ngIf="formulario.get(input.data.id).hasError('required')">Campo requerido</small>

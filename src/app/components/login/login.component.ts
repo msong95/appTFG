@@ -47,20 +47,21 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
-   
     if(localStorage.getItem('token')){
       this.router.navigate(['/dashboard'])
     }
+  
   }
 
   async sendForm(event){
     const response = await this.auth.login(event);
     
     let email = String((document.getElementById("email") as HTMLInputElement).value);
-    console.log(response);
+ 
 
-    if(response.token){
+    if(response.token!=null){
       localStorage.setItem('token', response.token);
+      localStorage.setItem('usuario', JSON.stringify(response.usuario));
       this.router.navigate(['/dashboard']);
     } else{
         this.addHTML();
