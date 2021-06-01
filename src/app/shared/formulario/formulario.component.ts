@@ -31,6 +31,7 @@ export class FormularioComponent implements OnInit {
     const inputs = this.formContent.inputs;
     inputs.forEach((input: Inputs) => {
       this.inputForms[input.data.id] = new FormControl('',input.data.validators)
+      //console.log(input.data.id)
     });
     this.formulario = new FormGroup(this.inputForms)
     let tipo=String(this.formContent.id)

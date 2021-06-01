@@ -27,12 +27,19 @@ export class PreguntasComponent implements OnInit {
     this.paginasPreguntas = Object.keys(this.preguntas);
     this.paginador = this.paginasPreguntas.length;
     this.preguntasActuales = this.preguntas[this.paginasPreguntas[0]]
-    console.log(this.preguntas)
+   console.log(this.preguntas)
   }
 
+
+
   changePage(change) {
+
+    
     if (this.paginaActual <= this.paginador) {
       if (change === 'next') {
+        
+        let clave = String((document.getElementById("respuesta_1_2") as HTMLInputElement).value);
+        console.log(clave)
         this.paginaActual++;
         this.preguntasActuales = this.preguntas[this.paginasPreguntas[this.paginaActual - 1]]
       } else {
@@ -40,14 +47,7 @@ export class PreguntasComponent implements OnInit {
         this.preguntasActuales = this.preguntas[this.paginasPreguntas[this.paginaActual - 1]]
       }
     }
-    console.log(this.formulario.nativeElement.value)
-  }
 
-  caculateLevel() {
-
-  }
-
-  ngOnChanges(changes){
-    console.log(changes)
+    //console.log(this.formulario.nativeElement.value)
   }
 }
