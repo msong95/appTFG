@@ -14,7 +14,7 @@
               [type]="pregunta.tipo"
               [value]="respuesta.puntuacion"
               *ngIf="pregunta.tipo== 'radio' || pregunta.tipo== 'checkbox'"
-            />
+              required />
 
             <input
             class="form-check-text"
@@ -23,7 +23,7 @@
             [type]="pregunta.tipo"
             [value]="respuesta.puntuacion"
             *ngIf="pregunta.tipo=='text' || pregunta.tipo=='number'"
-          />
+            required />
 
             <label class="form-check-label" for="gridRadios1">
               {{ respuesta.respuesta }}

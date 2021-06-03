@@ -81,6 +81,7 @@ export class RegistroComponent implements OnInit {
         localStorage.setItem('token', response.token);
         localStorage.setItem('usuario', JSON.stringify(response.token));
         this.router.navigate(['/dashboard']);
+        document.location.reload();
     
     }
   }else{

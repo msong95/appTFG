@@ -63,6 +63,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', response.token);
       localStorage.setItem('usuario', JSON.stringify(response.usuario));
       this.router.navigate(['/dashboard']);
+      document.location.reload();
     } else{
         this.addHTML();
         this.error = response.error;

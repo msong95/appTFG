@@ -15,6 +15,7 @@ import { HomePreguntasComponent } from './components/home-preguntas/home-pregunt
 import { FooterComponent } from './components/footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { environment } from './../environments/environment';
+import { FinalResultComponent } from './components/final-result/final-result.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { environment } from './../environments/environment';
     HomeComponent,
     HomePreguntasComponent,
     FooterComponent,
+    FinalResultComponent,
 
   ],
   imports: [

@@ -11,13 +11,15 @@ export class HeaderComponent implements OnInit {
 
   logged: boolean;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {    
+
+ }
 
   ngOnInit(): void {
     this.logged = localStorage.getItem('token') ? true : false
-    if(this.logged==true){
-      this.router.navigate(['/dashboard'])
-    }
+   if(this.logged==true){
+    this.router.navigate(['/dashboard'])
+  }
   }
 
   public logout(){
