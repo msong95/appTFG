@@ -4,7 +4,7 @@
     <div class="row align-items-center my-3">
         <div class="col-lg-2 col-xs-12 text-left">
         <a href="#">
-            <i class="fas fa-unlock"></i>
+            <i class="fas fa-unlock" title="Inicio"></i>
         </a>
         </div>
         <div class="col-lg-7 col-xs-12 text-center">
@@ -12,7 +12,9 @@
         </div>
         <div class="col-lg-2 col-xs-12 d-flex justify-content-end">
             <a [routerLink]="['\login']" > <i class="fas fa-user-alt">  </i></a>
-            <button class="btn btn-danger" (click)="logout()" *ngIf="logged">logout</button>
+   
+           
+            <button class="fas fa-sign-out-alt"(click)="logout()" *ngIf="logged" title="Cerrar sesión">logout</button>
         </div>
 
     </div>
