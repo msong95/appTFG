@@ -38,9 +38,12 @@ export class FormularioComponent implements OnInit {
    // console.log(tipo)
     let usuario= JSON.parse(localStorage.getItem('usuario'))
     console.log("datos",usuario)
-    
+      
      if(tipo=="modificar"){
+   //   (document.getElementById("email") as HTMLInputElement)
+      this.formulario.controls['email'].disable();
        this.formulario.setValue({username: "" , email: usuario.email, password:usuario.password, repite_password:usuario.password})
+
      }
 
 
