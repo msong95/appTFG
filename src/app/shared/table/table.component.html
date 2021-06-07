@@ -8,13 +8,13 @@
     <thead>
         <tr>
               <th scope="col">
-                Id Brecha
+                Resultado
             </th>
             <th scope="col">
-                Descripción
+                Solución
             </th>   
              <th scope="col">
-                Fecha
+                Fecha creación
             </th>
             <th scope="col">
                 PDF
@@ -22,14 +22,14 @@
         </tr>
     </thead>
     <tbody>
-         <tr *ngFor="let fila of preguntas.listado">
+         <tr *ngFor="let fila of listado">
             <td >
                 <input type="text"  [value]= "fila.id_brecha"  style="display:none;" id="id_brecha">
-                {{ fila.id_brecha }}
+                {{ fila.resultado }}
             </td>
             <td>
                 <input type="text"  [value]= "fila.brecha"  style="display:none;" id="brecha"> 
-                {{ fila.brecha }}
+                {{ fila.solucion }}
             </td>
        
             <td>
@@ -38,7 +38,7 @@
             </td>
             
             <td>
-                <i class="fas fa-file-download" (click)="generarPDF(fila.id_brecha, fila.brecha, fila.fecha)"></i>
+                <i class="fas fa-file-download" (click)="generarPDF(fila.resultado, fila.solucion, fila.fecha)"></i>
             </td>
 
         </tr>

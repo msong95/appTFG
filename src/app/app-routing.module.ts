@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FinalResultComponent } from './components/final-result/final-result.component';
 import { HomePreguntasComponent } from './components/home-preguntas/home-preguntas.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -24,6 +25,9 @@ const routes: Routes = [
   },
   {
     path: 'dashboard', component: DashboardComponent
+  },
+  {
+    path: 'resultadoFinal', component: FinalResultComponent
   },
   {
     path: '**', redirectTo: '/home'

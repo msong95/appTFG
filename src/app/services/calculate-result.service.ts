@@ -1,11 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { Brecha } from '../models/brecha.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CalculateResultService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   
   forPreguntas(listaPreguntas): number{
@@ -25,10 +28,27 @@ export class CalculateResultService {
           suma=suma+ (+valor);
           console.log("El valor es de tipo number:" , valor)
           }
-   
+  
       });
       }); 
       return suma;
+    }
+
+    
+   crearBrecha(values: Brecha): Promise<any> {
+      let headers = {
+        ['content-type']: 'application/json'
+      };
+      return new Promise(async (resolve, reject) => {
+        try {
+          const response = await this.http
+            .post(`${environment.backendUrl}/brecha/crearBrecha`, values, { headers })
+            .toPromise();
+          resolve(response);
+        } catch (error) {
+          reject(error);
+        }
+      });
     }
 
     

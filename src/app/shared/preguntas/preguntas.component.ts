@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { PREGUNTAS } from 'src/app/mocks/preguntas.mock';
+import { Brecha } from 'src/app/models/brecha.model';
 import { TotalPreguntas } from 'src/app/models/preguntas.model';
 import { CalculateResultService } from 'src/app/services/calculate-result.service';
 import { PreguntasService } from 'src/app/services/preguntas.service';
@@ -47,9 +48,13 @@ export class PreguntasComponent implements OnInit {
     }
     //console.log(this.formulario.nativeElement.value)
   }
-  caculateLevel() {
-         console.log("El total es: ",this.suma)
+  async caculateLevel() {
 
+      let b: Brecha= new Brecha("elena","resultado:","solucion1","2021-03-23");
+       const response = await this.calculateService.crearBrecha(b);
+       this.router.navigate(['/resultadoFinal']);
+       //document.location.reload();
+      
   }
   }
 

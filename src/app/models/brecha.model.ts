@@ -3,10 +3,21 @@ export interface totalBrecha {
   }
   
 export interface Brecha {
-    id_usuario: string;
-    id_brecha: string;
-    brecha: string;
+    email: string;
+    resultado: string;
+    solucion: string;
     fecha:string;
+}
 
-
+export class Brecha {
+  email: string;
+  resultado: string;
+  solucion: string;
+  fecha:string;
+  constructor(email: string,resultado: string, solucion: string, fecha:string) {
+      this.email=email;
+      this.resultado = resultado;
+      this.solucion = solucion;
+      this.fecha=fecha;
+  }
 }
