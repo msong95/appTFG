@@ -75,8 +75,9 @@ export class UpdateComponent implements OnInit {
     let clave1 = String((document.getElementById("repite_password") as HTMLInputElement).value);
     
     if(clave===clave1){
-     //console.log("modificamos")
+     console.log("modificamos")
       const response = await this.auth.modificar(event);
+      console.log(response)
       if(response){
         this.htmlYouWantToAdd="<b>Modifiación correcta</b>"
       } else{ 

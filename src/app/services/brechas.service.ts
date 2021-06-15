@@ -18,6 +18,21 @@ export class BrechasService {
       )
     })
 }
+crearBrecha(values: Brecha): Promise<any> {
+  let headers = {
+    ['content-type']: 'application/json'
+  };
+  return new Promise(async (resolve, reject) => {
+    try {
+      const response = await this.http
+        .post(`${environment.backendUrl}/brecha/crearBrecha`, values, { headers })
+        .toPromise();
+      resolve(response);
+    } catch (error) {
+      reject(error);
+    }
+  });
+}
 
 async buscarBrechas(email): Promise<Brecha[]>{
 
@@ -35,7 +50,6 @@ async buscarBrechas(email): Promise<Brecha[]>{
 }
 
 convertirPromesa(email): Brecha[]{
-  let contador=0;
   let lista = this.buscarBrechas(email);
   let listado: Brecha[]= new Array;
   lista.then(function(resultado) {
