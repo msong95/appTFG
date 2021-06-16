@@ -40,7 +40,7 @@ export class PreguntasComponent implements OnInit {
 
     if (this.paginaActual <= this.paginador) {
       if (change === 'next') {
-         this.suma=this.suma+this.calculateService.forPreguntas(this.preguntasActuales)
+         this.suma=this.suma+this.calculateService.calcularImpacto(this.preguntasActuales)
         this.paginaActual++;
         this.preguntasActuales = this.preguntas[this.paginasPreguntas[this.paginaActual - 1]]
       } else {
@@ -49,16 +49,12 @@ export class PreguntasComponent implements OnInit {
       }
     }
   }
+
   async caculateLevel() {
 
     let probabilidad=this.calculateService.calcularProbabilidad(this.preguntasActuales)
     let totalRiesgo= this.calculateService.riesgoTotal(probabilidad, this.suma)
-    let usuario= JSON.parse(localStorage.getItem('usuario'))
-    console.log("total:", totalRiesgo)
-
     localStorage.setItem('riesgo', JSON.stringify(totalRiesgo));
-      let b: Brecha= new Brecha(usuario.email, totalRiesgo.toString() ,"solucion1","2021-03-23");
-       const response = await this.brechaService.crearBrecha(b);
        this.router.navigate(['/resultadoFinal']);
       
   }

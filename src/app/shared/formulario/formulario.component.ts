@@ -37,11 +37,11 @@ export class FormularioComponent implements OnInit {
     let tipo=String(this.formContent.id)
    // console.log(tipo)
     let usuario= JSON.parse(localStorage.getItem('usuario'))
-    console.log("datos",usuario)
+    //console.log("datos",usuario)
       
      if(tipo=="modificar"){
    //   (document.getElementById("email") as HTMLInputElement)
-      this.formulario.controls['email'].disable();
+        this.formulario.controls['email'].disable();
        this.formulario.setValue({username: "" , email: usuario.email, password:usuario.password, repite_password:usuario.password})
 
      }
@@ -50,8 +50,6 @@ export class FormularioComponent implements OnInit {
   }
 
   async onSubmit(){
-
-    // const response = await this.auth.login(this.formulario.value)f
     this.sendForm.emit(this.formulario.value);
    
   }

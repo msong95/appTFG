@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GlobalConstants } from 'src/app/common/global-constants';
 import { FormContent } from 'src/app/interfaces/formContent.interface';
+import { Usuario } from 'src/app/models/usuario.model';
 import { AuthService } from 'src/app/services/auth.service';
 declare var $:any;
 @Component({
@@ -26,15 +27,20 @@ export class RegistroComponent implements OnInit {
         tooltip: 'Enter your username',
         data: {
           type: 'text',
-          id: 'username'
+          id: 'username',
+          validators:[
+            Validators.required]
         }
       },
       {
         title: 'Email',
-        tooltip: 'Invalid Email',
+        tooltip: 'Formato de email erróneo',
         data: {
           type: 'email',
-          id: 'email'
+          id: 'email',
+          validators:[
+            Validators.required,
+            Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]
         }
       },
       {
@@ -42,7 +48,10 @@ export class RegistroComponent implements OnInit {
         tooltip: 'Enter your password',
         data: {
           type: 'password',
-          id: 'password'
+          id: 'password',
+          validators:[
+            Validators.required]
+        
         }
       },
       {
@@ -50,7 +59,9 @@ export class RegistroComponent implements OnInit {
         tooltip: 'Enter your password',
         data: {
           type: 'password',
-          id: 'repite_password'
+          id: 'repite_password',
+          validators:[
+            Validators.required]
         }
       }
 
@@ -73,6 +84,7 @@ export class RegistroComponent implements OnInit {
   let clave1 = String((document.getElementById("repite_password") as HTMLInputElement).value);
   let email = String((document.getElementById("email") as HTMLInputElement).value);
   let username = String((document.getElementById("username") as HTMLInputElement).value);
+  let usuario = new Usuario(email, username,clave);
 
   
   if(clave===""||clave1===""|| email===""||username===""){
@@ -85,7 +97,7 @@ export class RegistroComponent implements OnInit {
         this.htmlYouWantToAdd="<b>Error, el email ya está registrado</b>"
       } else{
           localStorage.setItem('token', response.token);
-          localStorage.setItem('usuario', JSON.stringify(response.token));
+          localStorage.setItem('usuario', JSON.stringify(usuario));
           this.router.navigate(['/dashboard']);
           document.location.reload();
       

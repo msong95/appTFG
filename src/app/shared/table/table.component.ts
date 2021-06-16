@@ -26,7 +26,8 @@ export class TableComponent implements OnInit {
 
   }
 
-  generarPDF(id, brecha, fecha){
+  generarPDF(fila){
+
       const DATA = document.getElementById('htmlData');
       const doc = new jsPDF('p', 'pt', 'a4');
       const options = {
@@ -34,8 +35,8 @@ export class TableComponent implements OnInit {
         scale: 3
       };
 
-      doc.text("\n"+"\nID: " + id + "\n Descripción: " + brecha + "\n Fecha:" + fecha ,10,10);
-      doc.save(`${new Date().toISOString()}_tutorial.pdf`);
+      doc.text("\n"+"\nTitulo: " + fila.titulo + "\n Descripción: " + fila.resultado +"\nSolución:"+fila.solucion+ "\n Fecha:" + fila.fecha ,10,10);
+      doc.save(`${new Date().toISOString()}.pdf`);
   }
 
 }

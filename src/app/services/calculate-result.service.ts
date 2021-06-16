@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { WebElementPromise } from 'protractor';
 import { environment } from 'src/environments/environment';
 import { Brecha } from '../models/brecha.model';
+import { Resultado } from '../models/resultado.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,16 +13,16 @@ export class CalculateResultService {
   constructor(private http: HttpClient) { }
 
   
-  public getResultados(): Promise<Brecha[]> {
+  public getResultados(): Promise<Resultado[]> {
     return new Promise((resolve, reject) => {
-      this.http.get<Brecha[]>(`${environment.backendUrl}/resultado/resultados`).subscribe(
+      this.http.get<Resultado[]>(`${environment.backendUrl}/resultado/resultados`).subscribe(
         response => resolve(response),
         error => reject(error)
       )
     })
 }
 
-  forPreguntas(listaPreguntas): number{
+  calcularImpacto(listaPreguntas): number{
     let suma:number=0;
    
     listaPreguntas.forEach(pregunta => {
@@ -78,5 +80,21 @@ export class CalculateResultService {
         let suma:number=(probabilidad*0.4)+ (impacto*0.6);
           return suma;
         }
+
+
+      devolverResultadoFinal(lista, riesgoTotal): Resultado{
+
+        let resultado: Resultado=null;
+
+        lista.forEach(element => {
+          if(riesgoTotal>=element.minimo && riesgoTotal<element.maximo){
+              resultado= element;
+          }
+        });
+
+        return resultado;
+
+
+      }
     
 }

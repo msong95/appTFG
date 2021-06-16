@@ -4,6 +4,7 @@ export interface totalBrecha {
   
 export interface Brecha {
     email: string;
+    titulo:string;
     resultado: string;
     solucion: string;
     fecha:string;
@@ -11,11 +12,13 @@ export interface Brecha {
 
 export class Brecha {
   email: string;
+  titulo:string;
   resultado: string;
   solucion: string;
   fecha:string;
-  constructor(email: string,resultado: string, solucion: string, fecha:string) {
+  constructor(email: string,titulo:string,resultado: string, solucion: string, fecha:string) {
       this.email=email;
+      this.titulo=titulo;
       this.resultado = resultado;
       this.solucion = solucion;
       this.fecha=fecha;

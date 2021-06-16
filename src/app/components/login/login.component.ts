@@ -23,9 +23,11 @@ export class LoginComponent implements OnInit {
     inputs: [
     {
       title: 'Email',
-      tooltip: 'Enter your Email',
+      tooltip: 'Formato de email erróneo',
       data: {
-        validators: [Validators.required, Validators.pattern('')],
+        validators:  [
+          Validators.required,
+          Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")],
         type: 'email',
         id: 'email'
       }
@@ -35,7 +37,9 @@ export class LoginComponent implements OnInit {
       tooltip: 'Enter your password',
       data: {
         type: 'password',
-        id: 'password'
+        id: 'password',
+        validators:[
+          Validators.required]
       }
     }
   ]
