@@ -71,22 +71,30 @@ export class RegistroComponent implements OnInit {
     // primero comprobamos que las claves son iguales
   let clave = String((document.getElementById("password") as HTMLInputElement).value);
   let clave1 = String((document.getElementById("repite_password") as HTMLInputElement).value);
+  let email = String((document.getElementById("email") as HTMLInputElement).value);
+  let username = String((document.getElementById("username") as HTMLInputElement).value);
+
   
-  if(clave===clave1){
-    const response = await this.auth.registro(event);
-    if(response.token==null){
-      this.error = response.error;
-      this.htmlYouWantToAdd="<b>Error, el email ya está registrado</b>"
-    } else{
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('usuario', JSON.stringify(response.token));
-        this.router.navigate(['/dashboard']);
-        document.location.reload();
-    
-    }
+  if(clave===""||clave1===""|| email===""||username===""){
+    this.htmlYouWantToAdd="<b>Todos los campos son obligatorios</b>"
   }else{
-    this.htmlYouWantToAdd="<b>Error, las claves no coinciden</b>"
+    if(clave===clave1){
+      const response = await this.auth.registro(event);
+      if(response.token==null){
+        this.error = response.error;
+        this.htmlYouWantToAdd="<b>Error, el email ya está registrado</b>"
+      } else{
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('usuario', JSON.stringify(response.token));
+          this.router.navigate(['/dashboard']);
+          document.location.reload();
+      
+      }
+    }else{
+      this.htmlYouWantToAdd="<b>Error, las claves no coinciden</b>"
+    }
   }
+
 
 
   }

@@ -42,11 +42,12 @@ export class CalculateResultService {
             }
 
          }else if(pregunta.tipo==="checkbox"){
+
           if((document.getElementById(respuesta.id) as HTMLInputElement).checked){
             let valor=(document.getElementById(respuesta.id) as HTMLInputElement).value
             let valorCheck:number= 0;
             valorCheck=valorCheck + (+valor); 
-            console.log("valor del check:", valorCheck)
+           // console.log("valor del check:", valorCheck)
             suma=suma+ ((+valorCheck) *0.1);
           }
          }

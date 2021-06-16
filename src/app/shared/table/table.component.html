@@ -23,10 +23,12 @@
     </thead>
     <tbody>
          <tr *ngFor="let fila of listado">
+   
             <td >
                 <input type="text" [value]= "fila.resultado"  style="display:none;" id="id_brecha">
                 {{ fila.resultado }}
             </td>
+        
             <td>
                 <input type="text"  [value]= "fila.solucion"  style="display:none;" id="brecha"> 
                 {{ fila.solucion }}

@@ -17,7 +17,7 @@ export class HomePreguntasComponent implements OnChanges {
   }
 
   async ngOnInit() {
-    this.preguntas = await this.preguntasService.getAll()
+      this.preguntas = await this.preguntasService.getAll()
 
   }
 

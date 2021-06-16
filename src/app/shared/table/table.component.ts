@@ -20,10 +20,10 @@ export class TableComponent implements OnInit {
   constructor(private serviceBrecha: BrechasService) { }
 
   ngOnInit(): void {
-    
+
   let usuario= JSON.parse(localStorage.getItem('usuario'))
   this.listado =this.serviceBrecha.convertirPromesa(usuario.email);
-  console.log(this.listado)
+
   }
 
   generarPDF(id, brecha, fecha){

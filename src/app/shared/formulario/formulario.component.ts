@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
 import { FormContent, Inputs } from 'src/app/interfaces/formContent.interface';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,6 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css']
 })
+
 export class FormularioComponent implements OnInit {
 
   @Input() formContent: FormContent;

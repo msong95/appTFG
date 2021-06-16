@@ -51,12 +51,12 @@ export class PreguntasComponent implements OnInit {
   }
   async caculateLevel() {
 
-    // console.log("Impacto:", this.suma)
-     //console.log("Probabilidad", this.calculateService.calcularProbabilidad(this.preguntasActuales))
-     //console.log("Riesgo total", this.calculateService.riesgoTotal(this.calculateService.calcularProbabilidad(this.preguntasActuales), this.suma))
     let probabilidad=this.calculateService.calcularProbabilidad(this.preguntasActuales)
     let totalRiesgo= this.calculateService.riesgoTotal(probabilidad, this.suma)
     let usuario= JSON.parse(localStorage.getItem('usuario'))
+    console.log("total:", totalRiesgo)
+
+    localStorage.setItem('riesgo', JSON.stringify(totalRiesgo));
       let b: Brecha= new Brecha(usuario.email, totalRiesgo.toString() ,"solucion1","2021-03-23");
        const response = await this.brechaService.crearBrecha(b);
        this.router.navigate(['/resultadoFinal']);

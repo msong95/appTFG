@@ -35,13 +35,13 @@ crearBrecha(values: Brecha): Promise<any> {
 }
 
 async buscarBrechas(email): Promise<Brecha[]>{
-
+let contador=0;
  let lista = await this.getBrechas();
  let listado: Brecha[]= new Array;
   lista.forEach(function(brecha, index) {
     if(brecha.email===email){
-     
-       listado[index]=brecha
+       listado[contador]=brecha
+       contador++
     }
 });
 
@@ -50,12 +50,15 @@ async buscarBrechas(email): Promise<Brecha[]>{
 }
 
 convertirPromesa(email): Brecha[]{
+  let contador=0;
   let lista = this.buscarBrechas(email);
   let listado: Brecha[]= new Array;
   lista.then(function(resultado) {
     resultado.forEach(function(brecha, index) {
-      listado[index]=brecha
-  });
+      listado[contador]=brecha
+      contador++
+     
+  })
   
   })
 

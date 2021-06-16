@@ -29,7 +29,6 @@ export class UpdateComponent implements OnInit {
         data: {
           type: 'text',
           id: 'username',
-          value:"hola"
         }
       },
       {
@@ -73,22 +72,31 @@ export class UpdateComponent implements OnInit {
     // primero comprobamos que las claves son iguales
     let clave = String((document.getElementById("password") as HTMLInputElement).value);
     let clave1 = String((document.getElementById("repite_password") as HTMLInputElement).value);
+    let email = String((document.getElementById("email") as HTMLInputElement).value);
+    let username = String((document.getElementById("username") as HTMLInputElement).value);
     
-    if(clave===clave1){
-     console.log("modificamos")
-      const response = await this.auth.modificar(event);
-      console.log(response)
-      if(response){
-        this.htmlYouWantToAdd="<b>Modifiación correcta</b>"
-      } else{ 
-          this.error = response.error;
-          this.htmlYouWantToAdd="<b>Modifiación incorrecta</b>"
-      
-      }
+    if(clave===""||clave1===""|| email===""||username===""){
+      this.htmlYouWantToAdd="<b>Todos los campos son obligatorios</b>"
+
     }else{
-      this.htmlYouWantToAdd="<b>Error, las claves no coinciden</b>"
+      if(clave===clave1){
+        console.log("modificamos")
+         const response = await this.auth.modificar(event);
+         console.log(response)
+         if(response){
+           this.htmlYouWantToAdd="<b>Modificación correcta</b>"
+         } else{ 
+             this.error = response.error;
+             this.htmlYouWantToAdd="<b>Modificación incorrecta</b>"
+         
+         }
+       }else{
+         this.htmlYouWantToAdd="<b>Error, las claves no coinciden</b>"
+       }
     }
+
   
   }
+
 
 }
