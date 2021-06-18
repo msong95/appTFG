@@ -30,7 +30,9 @@
     "js-cookie": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
     "jspdf": "^2.3.1",
+    "jwt-decode": "^3.1.2",
     "rxjs": "~6.6.0",
+    "sweetalert2": "^11.0.17",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

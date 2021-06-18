@@ -13,6 +13,7 @@ export interface FormContent {
 export interface Inputs {
   title: string;
   tooltip: string;
+  value?: string;
   data: {
     validators?: ValidatorFn[];
     type: string,

@@ -8,26 +8,22 @@ import * as Cookies from 'js-cookie';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   logged: boolean;
 
-  constructor(private router: Router) {    
-
- }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.logged = localStorage.getItem('token') ? true : false
-   if(this.logged==true){
-    this.router.navigate(['/dashboard'])
-  }
+    this.logged = localStorage.getItem('token') ? true : false;
+    // if (this.logged == true) {
+    //   this.router.navigate(['/dashboard']);
+    // }
   }
 
-  public logout(){
+  public logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('usuario')
-    localStorage.removeItem('riesgo')
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('riesgo');
     this.logged = false;
-    this.router.navigate(['/home'])
+    this.router.navigate(['/home']);
   }
-
 }

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormContent } from 'src/app/interfaces/formContent.interface';
+import Swal from 'sweetalert2'
+
 declare var $:any;
 @Component({
   selector: 'app-login',
@@ -54,24 +56,21 @@ export class LoginComponent implements OnInit {
     if(localStorage.getItem('token')){
       this.router.navigate(['/dashboard'])
     }
-  
+
   }
 
   async sendForm(event){
     const response = await this.auth.login(event);
-    
-    let email = String((document.getElementById("email") as HTMLInputElement).value);
- 
 
-    if(response.token!=null){
+    if(response.token != null){
       localStorage.setItem('token', response.token);
       localStorage.setItem('usuario', JSON.stringify(response.usuario));
       this.router.navigate(['/dashboard']);
       document.location.reload();
     } else{
-        this.addHTML();
         this.error = response.error;
-        this.showToast();
+        // this.showToast();
+        Swal.fire('Error',response.error,'error')
     }
   }
 
