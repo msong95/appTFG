@@ -51,7 +51,7 @@ export class RegistroComponent implements OnInit {
           id: 'password',
           validators:[
             Validators.required]
-        
+
         }
       },
       {
@@ -78,7 +78,7 @@ export class RegistroComponent implements OnInit {
   }
 
   async sendForm(event) {
-    
+
     // primero comprobamos que las claves son iguales
   let clave = String((document.getElementById("password") as HTMLInputElement).value);
   let clave1 = String((document.getElementById("repite_password") as HTMLInputElement).value);
@@ -86,7 +86,7 @@ export class RegistroComponent implements OnInit {
   let username = String((document.getElementById("username") as HTMLInputElement).value);
   let usuario = new Usuario(email, username,clave);
 
-  
+
   if(clave===""||clave1===""|| email===""||username===""){
     this.htmlYouWantToAdd="<b>Todos los campos son obligatorios</b>"
   }else{
@@ -100,7 +100,7 @@ export class RegistroComponent implements OnInit {
           localStorage.setItem('usuario', JSON.stringify(usuario));
           this.router.navigate(['/dashboard']);
           document.location.reload();
-      
+
       }
     }else{
       this.htmlYouWantToAdd="<b>Error, las claves no coinciden</b>"
